@@ -1,5 +1,7 @@
 # Workflow dependency map
 
+**DLSS5 is not ready merely because its node folder exists.** See [DLSS5_SETUP.md](DLSS5_SETUP.md) for the upstream runtime installer, requirements, existing-runtime registration and verification commands.
+
 | Package | Nodes used | Repository |
 |---|---|---|
 | Muse Qwen Image 2.1 Edit | `MuseQwenImage21Edit` | Included in `nodes` |

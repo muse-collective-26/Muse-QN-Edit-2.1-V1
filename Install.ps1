@@ -17,6 +17,8 @@ try {
     }
     Write-Host "Muse Qwen Edit 2.1 - custom-node files installer`nTarget: $target"
     Write-Host 'No models, LoRAs, updates, Python packages or server restarts. Existing folders are skipped.'
+    Write-Host 'DLSS5 NEEDS EXTRA SETUP: its native runtime is NOT installed by this script.'
+    Write-Host 'Instructions: https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md'
     $git = Get-Command git -ErrorAction SilentlyContinue
     $existing = @(Get-ChildItem -LiteralPath $target -Directory)
     $missing = @()

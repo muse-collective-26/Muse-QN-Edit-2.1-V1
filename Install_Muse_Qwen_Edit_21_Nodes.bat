@@ -20,6 +20,8 @@ try {
     Write-Host 'Downloads the published Muse package plus missing workflow dependencies.'
     Write-Host 'Existing nodes are skipped. No model weights or LoRAs are downloaded.'
     Write-Host 'Python dependencies are separate: use ComfyUI Manager if required.'
+    Write-Host 'DLSS5 also needs a separately installed native runtime. Keep it off until configured.'
+    Write-Host 'Setup: https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md'
     Write-Host 'Qwen model use is research/evaluation only unless separately licensed.'
     $checkOnly = $env:MUSE_INSTALLER_CHECK -eq '--check'
     if (!$checkOnly -and (Read-Host 'Close ComfyUI first. Download installer from GitHub? [y/N]') -notmatch '^(y|yes)$') {

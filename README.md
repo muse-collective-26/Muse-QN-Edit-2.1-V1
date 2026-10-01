@@ -17,6 +17,8 @@ Other workflow packages are dependencies, not Muse-authored code: KJNodes, rgthr
 
 ## Installation
 
+**DLSS5 requires an extra native runtime installation, not just the node download. Follow [DLSS5 setup](DLSS5_SETUP.md) before enabling it.** The installer does not download that runtime or accept its separate licence.
+
 ### Standalone download installer
 
 Download [Install_Muse_Qwen_Edit_21_Nodes.bat](https://raw.githubusercontent.com/muse-collective-26/Muse-QN-Edit-2.1-V1/main/Install_Muse_Qwen_Edit_21_Nodes.bat), place it directly inside `ComfyUI/custom_nodes`, close ComfyUI and double-click it. Requires Git for Windows. It downloads this repository and runs its installer against that folder; no Muse runtime is embedded in the BAT. Confirm the download and then the missing packages to install. Existing packages are skipped, not updated. Python requirements still need ComfyUI Manager if missing. The temporary repository download is retained for inspection.
