@@ -17,6 +17,12 @@ Other workflow packages are dependencies, not Muse-authored code: KJNodes, rgthr
 
 ## Installation
 
+### Standalone download installer
+
+Download [Install_Muse_Qwen_Edit_21_Nodes.bat](https://raw.githubusercontent.com/muse-collective-26/Muse-QN-Edit-2.1-V1/main/Install_Muse_Qwen_Edit_21_Nodes.bat), place it directly inside `ComfyUI/custom_nodes`, close ComfyUI and double-click it. Requires Git for Windows. It downloads this repository and runs its installer against that folder; no Muse runtime is embedded in the BAT. Confirm the download and then the missing packages to install. Existing packages are skipped, not updated. Python requirements still need ComfyUI Manager if missing. The temporary repository download is retained for inspection.
+
+### ZIP/manual option
+
 Close ComfyUI first. Download this repository ZIP and extract it outside `custom_nodes`. Run `Install.bat`, then paste the full path to your ComfyUI `custom_nodes` folder. Git for Windows is required to download missing third-party packages.
 
 The installer copies the two included Muse node folders and clones missing external dependencies. Existing folders are skipped, including common alternate folder names. It does not overwrite/update existing nodes, download weights, install Python dependencies, restart ComfyUI, or change GPU packages. Partial downloads stay in a temporary folder, not in `custom_nodes`.
