@@ -1,0 +1,950 @@
+{
+  "id": "49344438-e407-4d74-82f4-d274d321d515",
+  "revision": 0,
+  "last_node_id": 6128,
+  "last_link_id": 14871,
+  "nodes": [
+    {
+      "id": 6086,
+      "type": "SetNode",
+      "pos": [
+        4729.590685287333,
+        7662.589015383296
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "link": 14857
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null
+        }
+      ],
+      "title": "Set_vae",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "vae"
+      },
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 6085,
+      "type": "SetNode",
+      "pos": [
+        4700.308685287337,
+        7597.3700153832915
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "link": 14856
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "title": "Set_clip",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "clip"
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 6084,
+      "type": "SetNode",
+      "pos": [
+        4647.251836085336,
+        7570.067908641395
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 14855
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null
+        }
+      ],
+      "title": "Set_model",
+      "properties": {
+        "Node name for S&R": "SetNode",
+        "aux_id": "kijai/ComfyUI-KJNodes",
+        "previousName": "model"
+      },
+      "widgets_values": [
+        "model"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 6108,
+      "type": "DLSS5EnhanceImages",
+      "pos": [
+        8801.93665171143,
+        7427.779977049327
+      ],
+      "size": [
+        413.34598619952885,
+        211.95636439098234
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14866
+        },
+        {
+          "name": "settings",
+          "type": "DLSS5_SETTINGS",
+          "link": 14865
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            14867,
+            14869
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "Blueforcer/ComfyUI-DLSS5-Enhancer",
+        "ver": "796ed5927a202ba50b5c929cd08e16b365041162",
+        "Node name for S&R": "DLSS5EnhanceImages"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 6110,
+      "type": "DLSS5Settings",
+      "pos": [
+        8446.323420916164,
+        7395.076953228435
+      ],
+      "size": [
+        304.56640625,
+        346
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "settings",
+          "type": "DLSS5_SETTINGS",
+          "links": [
+            14865
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "Blueforcer/ComfyUI-DLSS5-Enhancer",
+        "ver": "796ed5927a202ba50b5c929cd08e16b365041162",
+        "Node name for S&R": "DLSS5Settings"
+      },
+      "widgets_values": [
+        "1.5x (Quality)",
+        "Default",
+        "Default",
+        1,
+        1,
+        1.5,
+        2,
+        true,
+        "M",
+        "auto",
+        0.24,
+        0,
+        ""
+      ]
+    },
+    {
+      "id": 6100,
+      "type": "MuseModelLoader",
+      "pos": [
+        3797.9387758028947,
+        7259.478026707434
+      ],
+      "size": [
+        420,
+        814
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            14852,
+            14855
+          ]
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            14853,
+            14856
+          ]
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            14854,
+            14857
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "muse-collective-26/muse-model-loader",
+        "ver": "02fb218a0ae57221f4fada4975eac680ef657ca7",
+        "Node name for S&R": "MuseModelLoader",
+        "muse_model_loader_collapsed": {
+          "profile": false,
+          "pinned": false,
+          "model": false,
+          "clip": false,
+          "vae": false,
+          "loras": false
+        }
+      },
+      "widgets_values": [
+        "VRAM QUALITY PROFILE",
+        "Automatic",
+        "PINNED MEMORY POOL",
+        "10 GB",
+        "MODEL",
+        "(disabled)",
+        "(disabled)",
+        "qwen_image_2.1_int8_convrot.safetensors",
+        "CLIP",
+        "qwen3vl_8b_int8_convrot.safetensors",
+        "qwen_image",
+        "VAE",
+        "texture_fix_vae_for_qwen_image_2.1_bf16.safetensors",
+        "LoRAs",
+        "(disabled)",
+        1,
+        "(disabled)",
+        1,
+        "(disabled)",
+        1,
+        "(disabled)",
+        1,
+        "(disabled)",
+        1
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6118,
+      "type": "MarkdownNote",
+      "pos": [
+        3812.9521892831644,
+        8123.977015017156
+      ],
+      "size": [
+        394.72764857503535,
+        397.41190700325205
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Usage",
+      "properties": {},
+      "widgets_values": [
+        "## Size\nQwen Image 2.1 has native 2K (2048*2048) support for direct output.\n\nOutput size comes from ResolutionSelector (width/height). Default is 1 megapixel (1024*1024). For native 2K, set 1:1 and 4 megapixels (2048*2048). Prefer multiples of 32.\n\n## Transparent Image\n\nTo generate a transparent image, wrap the prompt like this and replace the middle with the subject:\n\n---\nThis is an RGBA format image with transparency. `[your description]`. The image has an alpha channel and a transparent background.\n\n---\nSave as PNG to keep the alpha channel.\n\n## Parameters\n\n- prompt: what to generate. For RGBA, see Note: transparent.\n- negative_prompt: unused while cfg is 1.\n- cfg: keep 1 for the Qwen Image 2.1 official path. Raise it only if you use a negative prompt.\n- steps: Qwen Image 2.1 official  pipeline uses about 40-50 with euler. This template starts at 25. More advanced samplers need fewer steps.\n"
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 3,
+      "type": "SaveImage",
+      "pos": [
+        7125.768763649047,
+        7262.77117994835
+      ],
+      "size": [
+        1172.7064460110196,
+        1261.5993588950078
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            14868
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6112,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        8327.926528027534,
+        7266.059513715617
+      ],
+      "size": [
+        918.1416216162964,
+        1283.5950658503061
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 14868
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 14869
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6116,
+      "type": "Label (rgthree)",
+      "pos": [
+        9502.227308003225,
+        7067.97183328593
+      ],
+      "size": [
+        528.3515625,
+        48
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "DLSS5 Enhanced Image",
+      "properties": {
+        "fontSize": 48,
+        "fontFamily": "Arial",
+        "fontColor": "#0fffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 6111,
+      "type": "SaveImage",
+      "pos": [
+        9275.932933744038,
+        7269.856572299203
+      ],
+      "size": [
+        1004.7666726438929,
+        1255.0705157901039
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14867
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6125,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        3808.7430619344877,
+        8883.05869729338
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Character Sheet x5",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Edit ref 1 directly.\n\nPreserve ref 1's exact canvas, composition, layout, subject positions, poses, camera angles, crops, framing, relative sizes, spacing and view directions.\n\nReplace ALL representations of the mannequin in ref 1 with the same woman from ref 2.\n\nIMPORTANT: this includes the LARGE CROPPED HEAD-AND-UPPER-BODY MANNEQUIN on the far left. Replace that large mannequin with a large cropped close-up of the woman from ref 2, occupying exactly the same area, scale, crop and position as the mannequin it replaces.\n\nReplace the four full-body mannequin views with the same woman from ref 2 while preserving each existing pose, orientation, size and position.\n\nUse ref 2 for the woman's identity, face, hair, body proportions and clothing. Infer the required side and back appearances naturally from ref 2.\n\nChange ONLY the mannequin/character content.\n\nDo not leave any mannequin visible.\nDo not shrink the large left close-up into a full-body view.\nDo not make all five representations the same size.\nDo not redesign or reconstruct the character-sheet layout.\nDo not add, remove, move, resize or rearrange any views.\n\nThe final image must retain ref 1's original asymmetric layout: one LARGE cropped close-up on the far left plus the existing smaller full-body views."
+      ]
+    },
+    {
+      "id": 6127,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        3812.453229203778,
+        9141.732421564004
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Character Sheet x3",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Edit REF 1 directly. REF 1 is the target image to be modified. REF 2 is the replacement character.\n\nREPLACE EVERY GREY MANNEQUIN FIGURE VISIBLE IN REF 1 WITH THE HUMAN CHARACTER FROM REF 2.\n\nThe grey mannequin is NOT part of the background or template design. It is a placeholder character that MUST be removed and replaced.\n\nThere are THREE grey mannequin representations in REF 1 and ALL THREE must be replaced by the SAME character from REF 2:\n\n1. Replace the LARGE grey mannequin close-up on the LEFT with a LARGE close-up of the character from REF 2. The character's head, face, hair, neck, shoulders and upper torso must occupy the same large area as the grey mannequin currently occupies. Preserve the mannequin's existing crop, scale, framing and position.\n\n2. Replace the FRONT-FACING full-body grey mannequin in the CENTRE with a full-body front view of the character from REF 2. Preserve its existing position, scale, pose and framing.\n\n3. Replace the SIDE-PROFILE full-body grey mannequin on the RIGHT with a side-profile view of the SAME character from REF 2. Preserve its existing position, scale, pose, orientation and framing.\n\nREF 2 is the ONLY source for character identity and appearance. Preserve the character's face, hairstyle, hair colour, body proportions, clothing, footwear and other visible details consistently across all three replacements.\n\nFor the side profile, infer the character's corresponding side appearance naturally from REF 2 while maintaining the same identity and clothing.\n\nCRITICAL EDIT REQUIREMENTS:\n\nREMOVE AND REPLACE EVERY GREY MANNEQUIN.\nZERO GREY MANNEQUINS may remain in the final image.\nThe large grey mannequin close-up on the left MUST NOT remain.\nDo not treat the large grey mannequin as background artwork.\nDo not preserve the mannequin's grey head, face, skin or body.\nDo not place the new character beside or over the mannequin while leaving the mannequin visible.\n\nPreserve REF 1's exact layout.\nPreserve the exact white background.\nPreserve the relative size and position of all three existing figures.\nDo not redesign the character sheet.\nDo not create a new layout.\nDo not add additional people or views.\nDo not make all three character representations the same size.\n\nThis is an IN-PLACE CHARACTER REPLACEMENT of REF 1:\nGREY MANNEQUIN = REMOVE.\nCHARACTER FROM REF 2 = REPLACE IT.\n\nFinal result: exactly THREE representations of the character from REF 2 and ZERO representations of the grey mannequin."
+      ]
+    },
+    {
+      "id": 6101,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        6177.356015279378,
+        7270.86801504756
+      ],
+      "size": [
+        918.1416216162964,
+        1283.5950658503061
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 14859
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 14858
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6117,
+      "type": "PreviewAny",
+      "pos": [
+        6231.40668318278,
+        6661.931049642051
+      ],
+      "size": [
+        851.967982539395,
+        538.3869035135804
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 14870
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            14871
+          ]
+        }
+      ],
+      "title": "Compiled Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6128,
+      "type": "Save Text File",
+      "pos": [
+        7108.742349791229,
+        6805.434761655248
+      ],
+      "size": [
+        386.33575625933554,
+        366.6875303395
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 14871
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Save Text File"
+      },
+      "widgets_values": [
+        "./ComfyUI/output/Muse Collective/Qwen2.1 Edit Prompt/[time(%Y-%m-%d)]",
+        "Qwen Edit Prompts",
+        "_",
+        4,
+        ".txt",
+        "utf-8",
+        ""
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6120,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        3807.6760601919377,
+        8619.791811720837
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "wearing black hoodie and jeans",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "the woman in ref 1 is wearing the hoodie from ref 2 and standing with a plain seamless, shadowless white background behind her, facing the camera with her arms by her side. She also wears black tight fitting jeans and no jewellery. cropped to just below the waist"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "MuseQwenImage21Edit",
+      "pos": [
+        4233.82701321768,
+        7261.058147248338
+      ],
+      "size": [
+        1920.465818029923,
+        2575
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 14852
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14853
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 14854
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            2,
+            14858,
+            14866
+          ]
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": []
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": []
+        },
+        {
+          "name": "compiled_prompt",
+          "type": "STRING",
+          "links": [
+            14870
+          ]
+        },
+        {
+          "name": "before_image",
+          "type": "IMAGE",
+          "links": [
+            14859
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseQwenImage21Edit",
+        "muse_dlss5_enabled": false
+      },
+      "widgets_values": [
+        "9:16 (Portrait Widescreen)",
+        1,
+        32,
+        true,
+        0,
+        "Edit the image in ref 1 according to your instructions.",
+        "",
+        1,
+        "euler",
+        "simple",
+        25,
+        989985482550618,
+        "randomize",
+        "gpu",
+        "int8",
+        "{\"refs\": [null, null, null, null, null, null, null, null, null, null]}",
+        "{\"action\": null}",
+        "edit",
+        "1x",
+        ""
+      ],
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      14852,
+      6100,
+      0,
+      1,
+      0,
+      "MODEL"
+    ],
+    [
+      14853,
+      6100,
+      1,
+      1,
+      1,
+      "CLIP"
+    ],
+    [
+      14854,
+      6100,
+      2,
+      1,
+      2,
+      "VAE"
+    ],
+    [
+      14855,
+      6100,
+      0,
+      6084,
+      0,
+      "MODEL"
+    ],
+    [
+      14856,
+      6100,
+      1,
+      6085,
+      0,
+      "CLIP"
+    ],
+    [
+      14857,
+      6100,
+      2,
+      6086,
+      0,
+      "VAE"
+    ],
+    [
+      14858,
+      1,
+      0,
+      6101,
+      1,
+      "IMAGE"
+    ],
+    [
+      14859,
+      1,
+      4,
+      6101,
+      0,
+      "IMAGE"
+    ],
+    [
+      14865,
+      6110,
+      0,
+      6108,
+      1,
+      "DLSS5_SETTINGS"
+    ],
+    [
+      14866,
+      1,
+      0,
+      6108,
+      0,
+      "IMAGE"
+    ],
+    [
+      14867,
+      6108,
+      0,
+      6111,
+      0,
+      "IMAGE"
+    ],
+    [
+      14868,
+      3,
+      0,
+      6112,
+      0,
+      "IMAGE"
+    ],
+    [
+      14869,
+      6108,
+      0,
+      6112,
+      1,
+      "IMAGE"
+    ],
+    [
+      14870,
+      1,
+      3,
+      6117,
+      0,
+      "STRING"
+    ],
+    [
+      14871,
+      6117,
+      0,
+      6128,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "version": 0.4
+}

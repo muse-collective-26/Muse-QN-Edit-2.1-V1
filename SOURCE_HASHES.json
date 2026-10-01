@@ -1,0 +1,9 @@
+{
+  "nodes/Muse-QwenImage21-Edit/__init__.py": "f029f96c55cb139b6937214535f097683c2428abce6c3f3419fd5b26d1e38b8c",
+  "nodes/Muse-QwenImage21-Edit/muse_qwen_image21_edit.py": "91033352540cae33d2d30b6f90b0b3b41f1220ef04e1ab58087f55eac86e2727",
+  "nodes/Muse-QwenImage21-Edit/js/muse_qwen_image21_edit.js": "44e64493c5c8d47357831b031b711a3041e862628d7fc4016890d4530d23fc91",
+  "nodes/Muse-Model-Loader/__init__.py": "042c1c8b1735bff539c974e5a38cf1bc4140215c3fd9bb579a6b4297141a737a",
+  "nodes/Muse-Model-Loader/muse_model_loader.py": "2d31a7e38ae50f3211f6804592972f6ca037d0ecaec706d51a34ea2905fcc172",
+  "nodes/Muse-Model-Loader/js/muse_model_loader.js": "8c2afcb294a3cf502c2b8f0bb6eb1baf7f0871fd8b9fc820fd5b0538a85aaf40",
+  "nodes/Muse-Model-Loader/README.md": "4b73e5cf95b47eba29af47faca4d30efc22196a1fd8f273da0f1ac2491e06ba4"
+}
