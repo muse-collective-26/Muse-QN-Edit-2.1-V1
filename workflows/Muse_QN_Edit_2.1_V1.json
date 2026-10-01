@@ -424,12 +424,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_shtmc_00017_.png&type=temp&subfolder=&rand=0.659749943141924"
+            "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00007_.png&type=temp&subfolder=&rand=0.22281178907280919"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_shtmc_00018_.png&type=temp&subfolder=&rand=0.42040814296837103"
+            "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00008_.png&type=temp&subfolder=&rand=0.39291068769705595"
           }
         ]
       ],
@@ -439,13 +439,13 @@
             {
               "name": "A",
               "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_shtmc_00017_.png&type=temp&subfolder=&rand=0.659749943141924",
+              "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00007_.png&type=temp&subfolder=&rand=0.22281178907280919",
               "img": {}
             },
             {
               "name": "B",
               "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_shtmc_00018_.png&type=temp&subfolder=&rand=0.42040814296837103",
+              "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00008_.png&type=temp&subfolder=&rand=0.39291068769705595",
               "img": {}
             }
           ]
@@ -581,46 +581,124 @@
       }
     },
     {
-      "id": 6125,
-      "type": "PrimitiveStringMultiline",
+      "id": 3,
+      "type": "SaveImage",
       "pos": [
-        3808.7430619344877,
-        8883.05869729338
+        7133.688541306228,
+        7292.151000289507
       ],
       "size": [
-        400,
-        200
+        1172.7064460110196,
+        1261.5993588950078
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            14868
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "ComfyUI"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6111,
+      "type": "SaveImage",
+      "pos": [
+        9289.473198770824,
+        7297.703532448644
+      ],
+      "size": [
+        1004.7666726438929,
+        1255.0705157901039
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14867
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "ComfyUI"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6129,
+      "type": "MarkdownNote",
+      "pos": [
+        3341.467238273364,
+        7266.823112184829
+      ],
+      "size": [
+        441.66941188677583,
+        1008.0794674268109
       ],
       "flags": {},
       "order": 5,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Character Sheet x5",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
+      "outputs": [],
+      "title": "Note: Model links",
+      "properties": {},
       "widgets_values": [
-        "Edit ref 1 directly.\n\nPreserve ref 1's exact canvas, composition, layout, subject positions, poses, camera angles, crops, framing, relative sizes, spacing and view directions.\n\nReplace ALL representations of the mannequin in ref 1 with the same woman from ref 2.\n\nIMPORTANT: this includes the LARGE CROPPED HEAD-AND-UPPER-BODY MANNEQUIN on the far left. Replace that large mannequin with a large cropped close-up of the woman from ref 2, occupying exactly the same area, scale, crop and position as the mannequin it replaces.\n\nReplace the four full-body mannequin views with the same woman from ref 2 while preserving each existing pose, orientation, size and position.\n\nUse ref 2 for the woman's identity, face, hair, body proportions and clothing. Infer the required side and back appearances naturally from ref 2.\n\nChange ONLY the mannequin/character content.\n\nDo not leave any mannequin visible.\nDo not shrink the large left close-up into a full-body view.\nDo not make all five representations the same size.\nDo not redesign or reconstruct the character-sheet layout.\nDo not add, remove, move, resize or rearrange any views.\n\nThe final image must retain ref 1's original asymmetric layout: one LARGE cropped close-up on the far left plus the existing smaller full-body views."
+        "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
       ],
       "widgets_values_named": {
-        "value": "Edit ref 1 directly.\n\nPreserve ref 1's exact canvas, composition, layout, subject positions, poses, camera angles, crops, framing, relative sizes, spacing and view directions.\n\nReplace ALL representations of the mannequin in ref 1 with the same woman from ref 2.\n\nIMPORTANT: this includes the LARGE CROPPED HEAD-AND-UPPER-BODY MANNEQUIN on the far left. Replace that large mannequin with a large cropped close-up of the woman from ref 2, occupying exactly the same area, scale, crop and position as the mannequin it replaces.\n\nReplace the four full-body mannequin views with the same woman from ref 2 while preserving each existing pose, orientation, size and position.\n\nUse ref 2 for the woman's identity, face, hair, body proportions and clothing. Infer the required side and back appearances naturally from ref 2.\n\nChange ONLY the mannequin/character content.\n\nDo not leave any mannequin visible.\nDo not shrink the large left close-up into a full-body view.\nDo not make all five representations the same size.\nDo not redesign or reconstruct the character-sheet layout.\nDo not add, remove, move, resize or rearrange any views.\n\nThe final image must retain ref 1's original asymmetric layout: one LARGE cropped close-up on the far left plus the existing smaller full-body views."
-      }
+        "text": "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
     },
     {
-      "id": 6127,
+      "id": 6125,
       "type": "PrimitiveStringMultiline",
       "pos": [
-        3812.453229203778,
-        9141.732421564004
+        3808.7430619344877,
+        8883.05869729338
       ],
       "size": [
         400,
@@ -637,6 +715,41 @@
           "links": null
         }
       ],
+      "title": "Character Sheet x5",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.37.0",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly five separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all five views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 40% of the sheet's width to this leftmost panel. Show a close-up, straight-on head-and-shoulders portrait, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other four panels. The bottom should crop at mid chest.\n\n2. FRONT FULL BODY: In the next 15% of the sheet's width, show the same person standing straight and facing directly forward, with both their face and body facing the viewer.\n\n3. LEFT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the left edge of the sheet. The head, torso and feet all face left.\n\n4. RIGHT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right.\n\n5. REAR FULL BODY: In the final 15%, show the person directly from behind, with the head and body facing away from the viewer, without looking over the shoulder.\n\nIn all four full-body panels, include the entire person from the top of the hair to the soles of the footwear, with small clear margins above and below. Use the same figure scale and align their feet along the same baseline. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large portrait and four full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
+      ],
+      "widgets_values_named": {
+        "value": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly five separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all five views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 40% of the sheet's width to this leftmost panel. Show a close-up, straight-on head-and-shoulders portrait, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other four panels. The bottom should crop at mid chest.\n\n2. FRONT FULL BODY: In the next 15% of the sheet's width, show the same person standing straight and facing directly forward, with both their face and body facing the viewer.\n\n3. LEFT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the left edge of the sheet. The head, torso and feet all face left.\n\n4. RIGHT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right.\n\n5. REAR FULL BODY: In the final 15%, show the person directly from behind, with the head and body facing away from the viewer, without looking over the shoulder.\n\nIn all four full-body panels, include the entire person from the top of the hair to the soles of the footwear, with small clear margins above and below. Use the same figure scale and align their feet along the same baseline. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large portrait and four full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
+      }
+    },
+    {
+      "id": 6127,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        3812.453229203778,
+        9141.732421564004
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
       "title": "Character Sheet x3",
       "properties": {
         "cnr_id": "comfy-core",
@@ -644,10 +757,10 @@
         "Node name for S&R": "PrimitiveStringMultiline"
       },
       "widgets_values": [
-        "Edit REF 1 directly. REF 1 is the target image to be modified. REF 2 is the replacement character.\n\nREPLACE EVERY GREY MANNEQUIN FIGURE VISIBLE IN REF 1 WITH THE HUMAN CHARACTER FROM REF 2.\n\nThe grey mannequin is NOT part of the background or template design. It is a placeholder character that MUST be removed and replaced.\n\nThere are THREE grey mannequin representations in REF 1 and ALL THREE must be replaced by the SAME character from REF 2:\n\n1. Replace the LARGE grey mannequin close-up on the LEFT with a LARGE close-up of the character from REF 2. The character's head, face, hair, neck, shoulders and upper torso must occupy the same large area as the grey mannequin currently occupies. Preserve the mannequin's existing crop, scale, framing and position.\n\n2. Replace the FRONT-FACING full-body grey mannequin in the CENTRE with a full-body front view of the character from REF 2. Preserve its existing position, scale, pose and framing.\n\n3. Replace the SIDE-PROFILE full-body grey mannequin on the RIGHT with a side-profile view of the SAME character from REF 2. Preserve its existing position, scale, pose, orientation and framing.\n\nREF 2 is the ONLY source for character identity and appearance. Preserve the character's face, hairstyle, hair colour, body proportions, clothing, footwear and other visible details consistently across all three replacements.\n\nFor the side profile, infer the character's corresponding side appearance naturally from REF 2 while maintaining the same identity and clothing.\n\nCRITICAL EDIT REQUIREMENTS:\n\nREMOVE AND REPLACE EVERY GREY MANNEQUIN.\nZERO GREY MANNEQUINS may remain in the final image.\nThe large grey mannequin close-up on the left MUST NOT remain.\nDo not treat the large grey mannequin as background artwork.\nDo not preserve the mannequin's grey head, face, skin or body.\nDo not place the new character beside or over the mannequin while leaving the mannequin visible.\n\nPreserve REF 1's exact layout.\nPreserve the exact white background.\nPreserve the relative size and position of all three existing figures.\nDo not redesign the character sheet.\nDo not create a new layout.\nDo not add additional people or views.\nDo not make all three character representations the same size.\n\nThis is an IN-PLACE CHARACTER REPLACEMENT of REF 1:\nGREY MANNEQUIN = REMOVE.\nCHARACTER FROM REF 2 = REPLACE IT.\n\nFinal result: exactly THREE representations of the character from REF 2 and ZERO representations of the grey mannequin."
+        "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
       ],
       "widgets_values_named": {
-        "value": "Edit REF 1 directly. REF 1 is the target image to be modified. REF 2 is the replacement character.\n\nREPLACE EVERY GREY MANNEQUIN FIGURE VISIBLE IN REF 1 WITH THE HUMAN CHARACTER FROM REF 2.\n\nThe grey mannequin is NOT part of the background or template design. It is a placeholder character that MUST be removed and replaced.\n\nThere are THREE grey mannequin representations in REF 1 and ALL THREE must be replaced by the SAME character from REF 2:\n\n1. Replace the LARGE grey mannequin close-up on the LEFT with a LARGE close-up of the character from REF 2. The character's head, face, hair, neck, shoulders and upper torso must occupy the same large area as the grey mannequin currently occupies. Preserve the mannequin's existing crop, scale, framing and position.\n\n2. Replace the FRONT-FACING full-body grey mannequin in the CENTRE with a full-body front view of the character from REF 2. Preserve its existing position, scale, pose and framing.\n\n3. Replace the SIDE-PROFILE full-body grey mannequin on the RIGHT with a side-profile view of the SAME character from REF 2. Preserve its existing position, scale, pose, orientation and framing.\n\nREF 2 is the ONLY source for character identity and appearance. Preserve the character's face, hairstyle, hair colour, body proportions, clothing, footwear and other visible details consistently across all three replacements.\n\nFor the side profile, infer the character's corresponding side appearance naturally from REF 2 while maintaining the same identity and clothing.\n\nCRITICAL EDIT REQUIREMENTS:\n\nREMOVE AND REPLACE EVERY GREY MANNEQUIN.\nZERO GREY MANNEQUINS may remain in the final image.\nThe large grey mannequin close-up on the left MUST NOT remain.\nDo not treat the large grey mannequin as background artwork.\nDo not preserve the mannequin's grey head, face, skin or body.\nDo not place the new character beside or over the mannequin while leaving the mannequin visible.\n\nPreserve REF 1's exact layout.\nPreserve the exact white background.\nPreserve the relative size and position of all three existing figures.\nDo not redesign the character sheet.\nDo not create a new layout.\nDo not add additional people or views.\nDo not make all three character representations the same size.\n\nThis is an IN-PLACE CHARACTER REPLACEMENT of REF 1:\nGREY MANNEQUIN = REMOVE.\nCHARACTER FROM REF 2 = REPLACE IT.\n\nFinal result: exactly THREE representations of the character from REF 2 and ZERO representations of the grey mannequin."
+        "value": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
       }
     },
     {
@@ -699,55 +812,11 @@
       }
     },
     {
-      "id": 3,
-      "type": "SaveImage",
-      "pos": [
-        7133.688541306228,
-        7292.151000289507
-      ],
-      "size": [
-        1172.7064460110196,
-        1261.5993588950078
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": [
-            14868
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "ComfyUI"
-      },
-      "color": "#3b0ea5",
-      "bgcolor": "#000000"
-    },
-    {
       "id": 6112,
       "type": "Image Comparer (rgthree)",
       "pos": [
-        8343.766083341898,
-        7303.103635015327
+        8328.309743075466,
+        7290.738562802173
       ],
       "size": [
         918.1416216162964,
@@ -789,12 +858,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_semys_00025_.png&type=temp&subfolder=&rand=0.49388177773420483"
+            "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00007_.png&type=temp&subfolder=&rand=0.02107468033850124"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_semys_00026_.png&type=temp&subfolder=&rand=0.6913185429282076"
+            "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00008_.png&type=temp&subfolder=&rand=0.17694167120229043"
           }
         ]
       ],
@@ -804,59 +873,17 @@
             {
               "name": "A",
               "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_semys_00025_.png&type=temp&subfolder=&rand=0.49388177773420483",
+              "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00007_.png&type=temp&subfolder=&rand=0.02107468033850124",
               "img": {}
             },
             {
               "name": "B",
               "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_semys_00026_.png&type=temp&subfolder=&rand=0.6913185429282076",
+              "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00008_.png&type=temp&subfolder=&rand=0.17694167120229043",
               "img": {}
             }
           ]
         }
-      },
-      "color": "#3b0ea5",
-      "bgcolor": "#000000"
-    },
-    {
-      "id": 6111,
-      "type": "SaveImage",
-      "pos": [
-        9289.473198770824,
-        7297.703532448644
-      ],
-      "size": [
-        1004.7666726438929,
-        1255.0705157901039
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 14867
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "widgets_values_named": {
-        "filename_prefix": "ComfyUI"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
@@ -938,74 +965,47 @@
       },
       "widgets_values": [
         "16:9 (Widescreen)",
-        4,
+        1,
         32,
-        false,
+        true,
         0,
-        "Ultra-high-resolution photorealistic head-and-shoulders portrait of an older male sailor standing beside the sea, photographed as an intimate environmental portrait with exceptional facial micro-detail and completely natural skin texture.\n\nThe man is approximately 65 years old, with a strong, weathered face shaped by decades spent working outdoors at sea. He has a slightly rugged appearance rather than looking like a fashion model. His face has believable age: fine lines around the eyes, deeper forehead creases, crow's feet, subtle under-eye texture, nasolabial folds, small variations in pigmentation, faint sun spots, visible pores, tiny imperfections and naturally uneven skin tone. His skin is healthy but genuinely weathered by years of exposure to wind, salt and sunlight.\n\nHe has a short, thick salt-and-pepper beard, predominantly silver-grey with scattered darker hairs. The beard is slightly rough and imperfect rather than precisely groomed. Render individual beard hairs with different lengths, directions and shades. A few coarse silver hairs catch the light. His moustache blends naturally into the beard, with individual hairs visible around the upper lip.\n\nHis hair is short, slightly wavy and mostly silver-grey, with darker remnants around the sides and back. It has been disturbed by the coastal wind, creating loose strands and small flyaway hairs rather than a perfectly styled shape.\n\nHis eyes are pale blue-grey and extremely detailed, with complex iris fibres, subtle colour variation, moist natural highlights, tiny blood vessels in the whites of the eyes and realistic reflections of the bright coastal environment. His expression is calm, thoughtful and quietly confident, with the subtle intensity of someone accustomed to spending long periods at sea. He looks slightly past the camera rather than directly posing for it.\n\nHis eyebrows are thick and naturally irregular, containing a mixture of grey, white and darker hairs. Individual eyelashes should remain visible without appearing artificially sharp.\n\nFrame him closely from approximately the upper chest upward. His head and face occupy a substantial portion of the image, allowing extremely close inspection of facial detail. Do not crop the top of his head. Include both shoulders naturally within the frame.\n\nHe wears a heavy dark navy fisherman's wool jumper beneath a faded, weathered navy sailing jacket. The jacket is partially open at the neck. Its material shows realistic wear from years of use: subtle creasing, faded areas, stitching, seams, tiny salt marks, slightly worn edges and aged metal hardware. The wool jumper beneath has clearly visible knitted fibres and an authentic coarse maritime texture.\n\nAround his neck is a simple thin cord carrying a small, worn brass maritime pendant, only partially visible beneath the clothing. The brass has subtle oxidation, tiny scratches and naturally aged surface detail.\n\nThe portrait is photographed outdoors beside a working harbour on a cool coastal morning.\n\nBehind him is the sea, rendered naturally out of focus through genuine optical depth of field. The water is deep slate blue with subtle turquoise and steel-grey variations. Small waves and white highlights catch the morning light.\n\nIn the distant background, softly blurred fishing boats and sailing vessels are visible. Masts, ropes and rigging create delicate vertical and diagonal lines without distracting from his face. A weathered harbour wall and distant rocky coastline are faintly visible further behind him.\n\nThe coastal wind subtly affects the portrait. Several strands of his silver hair move naturally, individual beard hairs lift slightly, and the collar of his jacket responds gently to the breeze.\n\nSoft directional morning sunlight comes from approximately 45 degrees to one side of the camera, producing beautiful modelling across the man's face. The light reveals skin texture rather than smoothing it. Fine wrinkles and pores remain visible while the overall portrait remains flattering and photographic.\n\nA subtle cool fill comes naturally from the open sky and reflected sea. Very gentle warm highlights from the low sun contrast with the cooler maritime environment.\n\nThe eyes contain small, physically believable catchlights. Moisture along the lower eyelids catches tiny highlights. The nose, cheeks and forehead have extremely subtle natural skin sheen without looking oily or artificially glossy.\n\nPay particular attention to realistic transitions between skin and hair: individual beard follicles emerging naturally from the face, tiny grey hairs along the cheeks and jawline, subtle stubble between the fuller beard hairs, realistic eyebrow roots and fine facial hair catching backlight around the edges of the face.\n\nRender extremely fine facial micro-detail suitable for close inspection at very high resolution: pores, fine wrinkles, individual beard hairs, eyelashes, eyebrow hairs, tiny skin imperfections, subtle pigmentation, lip texture, small creases around the mouth, individual iris fibres and natural moisture in the eyes.\n\nHis lips are naturally textured and slightly weathered by the coastal environment, with subtle vertical lines and realistic colour variation.\n\nHands are not visible. The composition is specifically designed as a facial-resolution test rather than a full-body portrait.\n\nPhotographed using the aesthetic of a professional high-resolution medium-format camera with an approximately 100mm portrait lens, camera at eye level, shallow but controlled depth of field around f/4. The man's entire face, eyes and beard remain critically detailed while the harbour and sea transition smoothly into natural optical softness.\n\nFocus is precisely on the nearest eye while sufficient depth of field keeps both eyes, the nose, beard and most of the face convincingly sharp.\n\nNatural perspective, no wide-angle facial distortion.\n\nExtremely high resolving power with genuine micro-contrast. Fine details should remain distinct rather than being created through artificial sharpening.\n\nNatural photographic colour science with restrained saturation, realistic skin tones, subtle cool maritime blues and gently warm highlights.\n\nThe final image should resemble a premium editorial portrait made for a large-format photography exhibition or high-end documentary magazine: intimate, authentic, understated and exceptionally detailed.\n\nPrioritise believable photographic detail over perfection. Do not beautify away his age. Preserve pores, wrinkles, pigmentation, beard irregularities and natural asymmetry.\n\nNo plastic or waxy skin, no excessive skin smoothing, no artificial HDR appearance, no painterly texture, no exaggerated cinematic colour grading, no artificial edge sharpening.\n\nThe image should withstand extreme enlargement, with meaningful fine information visible throughout the man's face, eyes, hair, beard and clothing while retaining the natural appearance of a genuine high-resolution photograph.",
+        "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels.",
         "",
         1,
         "euler",
         "simple",
         25,
-        778818476763516,
+        376726376662184,
         "randomize",
         "gpu",
         "int8",
         "{\"refs\":[null,null,null,null,null,null,null,null,null,null]}",
-        "{\"action\":null,\"session_id\":\"67c42196-12d7-4f1b-85d7-c98919c71959\"}",
-        "text_to_image",
+        "{\"action\":null,\"session_id\":\"38991c81-f190-496f-920f-3ce75be40f5a\"}",
+        "edit",
         "1x",
         ""
       ],
       "widgets_values_named": {
         "aspect_ratio": "16:9 (Widescreen)",
-        "megapixels": 4,
+        "megapixels": 1,
         "multiple": 32,
-        "custom_size": false,
+        "custom_size": true,
         "reference_resolution": 0,
-        "prompt": "Ultra-high-resolution photorealistic head-and-shoulders portrait of an older male sailor standing beside the sea, photographed as an intimate environmental portrait with exceptional facial micro-detail and completely natural skin texture.\n\nThe man is approximately 65 years old, with a strong, weathered face shaped by decades spent working outdoors at sea. He has a slightly rugged appearance rather than looking like a fashion model. His face has believable age: fine lines around the eyes, deeper forehead creases, crow's feet, subtle under-eye texture, nasolabial folds, small variations in pigmentation, faint sun spots, visible pores, tiny imperfections and naturally uneven skin tone. His skin is healthy but genuinely weathered by years of exposure to wind, salt and sunlight.\n\nHe has a short, thick salt-and-pepper beard, predominantly silver-grey with scattered darker hairs. The beard is slightly rough and imperfect rather than precisely groomed. Render individual beard hairs with different lengths, directions and shades. A few coarse silver hairs catch the light. His moustache blends naturally into the beard, with individual hairs visible around the upper lip.\n\nHis hair is short, slightly wavy and mostly silver-grey, with darker remnants around the sides and back. It has been disturbed by the coastal wind, creating loose strands and small flyaway hairs rather than a perfectly styled shape.\n\nHis eyes are pale blue-grey and extremely detailed, with complex iris fibres, subtle colour variation, moist natural highlights, tiny blood vessels in the whites of the eyes and realistic reflections of the bright coastal environment. His expression is calm, thoughtful and quietly confident, with the subtle intensity of someone accustomed to spending long periods at sea. He looks slightly past the camera rather than directly posing for it.\n\nHis eyebrows are thick and naturally irregular, containing a mixture of grey, white and darker hairs. Individual eyelashes should remain visible without appearing artificially sharp.\n\nFrame him closely from approximately the upper chest upward. His head and face occupy a substantial portion of the image, allowing extremely close inspection of facial detail. Do not crop the top of his head. Include both shoulders naturally within the frame.\n\nHe wears a heavy dark navy fisherman's wool jumper beneath a faded, weathered navy sailing jacket. The jacket is partially open at the neck. Its material shows realistic wear from years of use: subtle creasing, faded areas, stitching, seams, tiny salt marks, slightly worn edges and aged metal hardware. The wool jumper beneath has clearly visible knitted fibres and an authentic coarse maritime texture.\n\nAround his neck is a simple thin cord carrying a small, worn brass maritime pendant, only partially visible beneath the clothing. The brass has subtle oxidation, tiny scratches and naturally aged surface detail.\n\nThe portrait is photographed outdoors beside a working harbour on a cool coastal morning.\n\nBehind him is the sea, rendered naturally out of focus through genuine optical depth of field. The water is deep slate blue with subtle turquoise and steel-grey variations. Small waves and white highlights catch the morning light.\n\nIn the distant background, softly blurred fishing boats and sailing vessels are visible. Masts, ropes and rigging create delicate vertical and diagonal lines without distracting from his face. A weathered harbour wall and distant rocky coastline are faintly visible further behind him.\n\nThe coastal wind subtly affects the portrait. Several strands of his silver hair move naturally, individual beard hairs lift slightly, and the collar of his jacket responds gently to the breeze.\n\nSoft directional morning sunlight comes from approximately 45 degrees to one side of the camera, producing beautiful modelling across the man's face. The light reveals skin texture rather than smoothing it. Fine wrinkles and pores remain visible while the overall portrait remains flattering and photographic.\n\nA subtle cool fill comes naturally from the open sky and reflected sea. Very gentle warm highlights from the low sun contrast with the cooler maritime environment.\n\nThe eyes contain small, physically believable catchlights. Moisture along the lower eyelids catches tiny highlights. The nose, cheeks and forehead have extremely subtle natural skin sheen without looking oily or artificially glossy.\n\nPay particular attention to realistic transitions between skin and hair: individual beard follicles emerging naturally from the face, tiny grey hairs along the cheeks and jawline, subtle stubble between the fuller beard hairs, realistic eyebrow roots and fine facial hair catching backlight around the edges of the face.\n\nRender extremely fine facial micro-detail suitable for close inspection at very high resolution: pores, fine wrinkles, individual beard hairs, eyelashes, eyebrow hairs, tiny skin imperfections, subtle pigmentation, lip texture, small creases around the mouth, individual iris fibres and natural moisture in the eyes.\n\nHis lips are naturally textured and slightly weathered by the coastal environment, with subtle vertical lines and realistic colour variation.\n\nHands are not visible. The composition is specifically designed as a facial-resolution test rather than a full-body portrait.\n\nPhotographed using the aesthetic of a professional high-resolution medium-format camera with an approximately 100mm portrait lens, camera at eye level, shallow but controlled depth of field around f/4. The man's entire face, eyes and beard remain critically detailed while the harbour and sea transition smoothly into natural optical softness.\n\nFocus is precisely on the nearest eye while sufficient depth of field keeps both eyes, the nose, beard and most of the face convincingly sharp.\n\nNatural perspective, no wide-angle facial distortion.\n\nExtremely high resolving power with genuine micro-contrast. Fine details should remain distinct rather than being created through artificial sharpening.\n\nNatural photographic colour science with restrained saturation, realistic skin tones, subtle cool maritime blues and gently warm highlights.\n\nThe final image should resemble a premium editorial portrait made for a large-format photography exhibition or high-end documentary magazine: intimate, authentic, understated and exceptionally detailed.\n\nPrioritise believable photographic detail over perfection. Do not beautify away his age. Preserve pores, wrinkles, pigmentation, beard irregularities and natural asymmetry.\n\nNo plastic or waxy skin, no excessive skin smoothing, no artificial HDR appearance, no painterly texture, no exaggerated cinematic colour grading, no artificial edge sharpening.\n\nThe image should withstand extreme enlargement, with meaningful fine information visible throughout the man's face, eyes, hair, beard and clothing while retaining the natural appearance of a genuine high-resolution photograph.",
+        "prompt": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels.",
         "negative_prompt": "",
         "cfg": 1,
         "sampler_name": "euler",
         "scheduler": "simple",
         "steps": 25,
-        "seed": 778818476763516,
+        "seed": 376726376662184,
         "control_after_generate": "randomize",
         "cache_device": "gpu",
         "cache_dtype": "int8",
         "refs_data": "{\"refs\":[null,null,null,null,null,null,null,null,null,null]}",
-        "state_json": "{\"action\":null,\"session_id\":\"67c42196-12d7-4f1b-85d7-c98919c71959\"}",
-        "mode": "text_to_image",
+        "state_json": "{\"action\":null,\"session_id\":\"38991c81-f190-496f-920f-3ce75be40f5a\"}",
+        "mode": "edit",
         "enhance_resolution_multiply": "1x",
         "mquwen21_ui": ""
-      },
-      "color": "#3b0ea5",
-      "bgcolor": "#000000"
-    },
-    {
-      "id": 6129,
-      "type": "MarkdownNote",
-      "pos": [
-        3341.467238273364,
-        7266.823112184829
-      ],
-      "size": [
-        441.66941188677583,
-        1008.0794674268109
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Note: Model links",
-      "properties": {},
-      "widgets_values": [
-        "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
-      ],
-      "widgets_values_named": {
-        "text": "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
@@ -1145,10 +1145,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6303940863128639,
+      "scale": 0.2673486306413793,
       "offset": [
-        -2936.699727568622,
-        -6858.465860395851
+        -1581.0704936754778,
+        -5700.56764088585
       ]
     },
     "frontendVersion": "1.52.7",
