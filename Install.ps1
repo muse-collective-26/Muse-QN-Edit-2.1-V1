@@ -7,7 +7,7 @@ $packages = @(
     @{name='Muse-Model-Loader'; repo=''; marker='muse_model_loader.py'; aliases=@()},
     @{name='ComfyUI-KJNodes'; repo='https://github.com/kijai/ComfyUI-KJNodes.git'; marker=''; aliases=@('comfyui-kjnodes')},
     @{name='rgthree-comfy'; repo='https://github.com/rgthree/rgthree-comfy.git'; marker=''; aliases=@()},
-    @{name='was-node-suite-comfyui'; repo='https://github.com/ltdrdata/was-node-suite-comfyui.git'; marker='WAS_Node_Suite.py'; aliases=@('was-ns','ComfyUI-WAS-Node-Suite')},
+    @{name='Muse-Save-Text'; repo=''; marker=''; aliases=@()},
     @{name='ComfyUI-DLSS5-Enhancer'; repo='https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer.git'; marker=''; aliases=@()}
 )
 function Normalize-Repo([string]$url) { return (($url.Trim().TrimEnd('/') -replace '\.git$','') -replace '^git@github.com:','https://github.com/').ToLowerInvariant() }
