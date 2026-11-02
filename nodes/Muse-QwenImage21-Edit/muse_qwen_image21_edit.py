@@ -32,6 +32,7 @@ import torch
 from PIL import Image, ImageOps
 
 import comfy.model_management
+import comfy.samplers
 import folder_paths
 from nodes import NODE_CLASS_MAPPINGS as GLOBAL_NODE_CLASS_MAPPINGS
 from comfy_extras.nodes_resolution import AspectRatio, ASPECT_RATIOS
@@ -243,7 +244,7 @@ def _upstream_signature(prompt_graph, unique_id, model, clip, vae):
 def _active_refs(refs_data, mode):
     if mode == "text_to_image":
         return []
-    if mode == "enhance":
+    if mode in ("enhance", "refmod_dataset"):
         data = json.loads(refs_data or "{}")
         refs = data.get("refs", [])
         return _parse_refs_data(json.dumps({"refs": refs[:1]}))
@@ -265,7 +266,7 @@ class MuseQwenImage21Edit:
     @classmethod
     def IS_CHANGED(cls, refs_data="{}", mode="edit", state_json="{}", **kwargs):
         # Edit actions depend on process state and must never reuse graph-cache output.
-        if mode == "edit":
+        if mode in ("edit", "refmod_dataset"):
             return float("nan")
         digest = hashlib.sha256()
         for entry in _active_refs(refs_data, mode):
@@ -309,8 +310,8 @@ class MuseQwenImage21Edit:
                 "cfg": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 30.0, "step": 0.1, "tooltip":
                     "Keep at 1 for Qwen's official path (negative_prompt has no effect at cfg 1). "
                     "Raise it only if you're actually using a negative prompt."}),
-                "sampler_name": (["euler", "euler_ancestral", "dpmpp_2m", "res_multistep"], {"default": "euler"}),
-                "scheduler": (["simple", "normal", "beta", "sgm_uniform"], {"default": "simple"}),
+                "sampler_name": (comfy.samplers.KSampler.SAMPLERS, {"default": "euler"}),
+                "scheduler": (comfy.samplers.KSampler.SCHEDULERS, {"default": "simple"}),
                 "steps": ("INT", {"default": 25, "min": 1, "max": 100, "tooltip":
                     "Qwen Image 2.1's official pipeline uses about 40-50 steps with euler. This node "
                     "starts at 25 (the template default) — more advanced samplers may need fewer."}),
@@ -332,7 +333,7 @@ class MuseQwenImage21Edit:
 
                 # --- Mode toggle (also appended at the end for the same ---
                 # positional-serialization reason as state_json above.
-                "mode": (["edit", "text_to_image", "enhance"], {"default": "edit", "tooltip":
+                "mode": (["edit", "text_to_image", "enhance", "refmod_dataset"], {"default": "edit", "tooltip":
                     "edit: today's full reference-image edit pipeline with the iterative "
                     "edit loop. text_to_image: no references at all, matches Comfy-Org's own "
                     "official Text to Image (Qwen Image 2.1) template exactly. enhance: "
@@ -345,6 +346,9 @@ class MuseQwenImage21Edit:
                     "factor before rendering — useful for enhancing small images, which "
                     "otherwise render at their tiny native size. 1x preserves the uploaded image dimensions unless Custom Size is on. "
                     "Reference Resolution controls conditioning detail separately."}),
+                "dataset_views": (["both", "portraits", "full_body"], {"default": "both"}),
+                "dataset_width": ("INT", {"default": 1152, "min": 256, "max": 2048, "step": 64}),
+                "dataset_height": ("INT", {"default": 2048, "min": 320, "max": 4096, "step": 64}),
             },
             "hidden": {"unique_id": "UNIQUE_ID", "prompt_graph": "PROMPT", "extra_pnginfo": "EXTRA_PNGINFO"},
         }
@@ -463,7 +467,12 @@ class MuseQwenImage21Edit:
     def generate(self, model, clip, vae, aspect_ratio, megapixels, multiple, custom_size,
                  reference_resolution, prompt, negative_prompt, cfg, sampler_name, scheduler,
                  steps, seed, cache_device, cache_dtype, refs_data, state_json, mode,
-                 enhance_resolution_multiply, unique_id, prompt_graph=None, extra_pnginfo=None):
+                 enhance_resolution_multiply, unique_id, prompt_graph=None, extra_pnginfo=None,
+                 dataset_views="both", dataset_width=1152, dataset_height=2048):
+        if mode == "refmod_dataset":
+            from .dataset import run
+            import sys
+            return run(self, sys.modules[__name__], locals().copy(), dataset_views, dataset_width, dataset_height)
         if not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("Enter a prompt before rendering.")
 

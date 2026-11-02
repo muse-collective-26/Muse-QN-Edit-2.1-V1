@@ -8,7 +8,7 @@
 | Muse Model Loader | `MuseModelLoader` | Included in `nodes`; upstream https://github.com/muse-collective-26/muse-model-loader |
 | KJNodes | `SetNode` | https://github.com/kijai/ComfyUI-KJNodes |
 | rgthree-comfy | Image Comparer, Label | https://github.com/rgthree/rgthree-comfy |
-| WAS Node Suite (Revised) | Save Text File | https://github.com/ltdrdata/was-node-suite-comfyui |
+| Muse Save Text | `MuseSaveText` | Included in `nodes` |
 | DLSS5 Enhancer | DLSS5Settings, DLSS5EnhanceImages | https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer |
 
 SaveImage, PreviewAny, PrimitiveStringMultiline and MarkdownNote are ComfyUI/core frontend components, not additional repositories to clone.

@@ -10,10 +10,11 @@ Read [model files and licensing](MODEL_FILES_AND_LICENSING.md) before downloadin
 
 ## Included Muse nodes
 
-- `nodes/Muse-QwenImage21-Edit`: editing with up to ten reference images, text-to-image and enhancement modes; preview/edit/confirm interface; mode-sensitive controls and full-image reference thumbnails with dimensions.
+- `nodes/Muse-QwenImage21-Edit`: editing with up to ten reference images, text-to-image, enhancement and **RefMod dataset** modes; preview/edit/confirm interface; mode-sensitive controls, full-image reference thumbnails with dimensions, and every sampler and scheduler your ComfyUI offers. RefMod dataset mode builds portrait and full-body views of the character in Ref 1, lets you review them, then enhances the chosen views into separate images.
+- `nodes/Muse-Save-Text`: saves the compiled prompt as a numbered text file in any folder (default: `output/Muse Collective/Qwen Edit 2.1 Prompts/<date>`). No WAS Node Suite needed.
 - `nodes/Muse-Model-Loader`: MODEL / CLIP / VAE loading, VRAM profiles and optional LoRA slots. The loader is copied from the local version used by the supplied workflow. Its [existing upstream repository](https://github.com/muse-collective-26/muse-model-loader) remains separate.
 
-Other workflow packages are dependencies, not Muse-authored code: KJNodes, rgthree-comfy, WAS Node Suite (Revised), and DLSS5 Enhancer. See [dependencies](DEPENDENCIES.md).
+Other workflow packages are dependencies, not Muse-authored code: KJNodes, rgthree-comfy and DLSS5 Enhancer. (WAS Node Suite is no longer needed: Muse Save Text replaces its Save Text File node.) See [dependencies](DEPENDENCIES.md).
 
 ## Installation
 
@@ -27,7 +28,7 @@ Download [Install_Muse_Qwen_Edit_21_Nodes.bat](https://github.com/muse-collectiv
 
 Close ComfyUI first. Download this repository ZIP and extract it outside `custom_nodes`. Run `Install.bat`, then paste the full path to your ComfyUI `custom_nodes` folder. Git for Windows is required to download missing third-party packages.
 
-The installer copies the two included Muse node folders and clones missing external dependencies. Existing folders are skipped, including common alternate folder names. It does not overwrite/update existing nodes, download weights, install Python dependencies, restart ComfyUI, or change GPU packages. Partial downloads stay in a temporary folder, not in `custom_nodes`.
+The installer copies the three included Muse node folders and clones missing external dependencies. Existing folders are skipped, including common alternate folder names. It does not overwrite/update existing nodes, download weights, install Python dependencies, restart ComfyUI, or change GPU packages. Partial downloads stay in a temporary folder, not in `custom_nodes`.
 
 Use ComfyUI Manager to resolve Python dependencies for newly installed packages using ComfyUI's own Python environment. Do not run system-wide pip or blindly replace PyTorch/CUDA. Restart ComfyUI afterwards.
 
@@ -37,11 +38,15 @@ This is a **multi-package distribution repository**: do not just clone its root 
 
 Use a ComfyUI build that includes `TextEncodeQwenImage21`, `QwenImage21Cache`, and the Qwen Image 2.1 model/encoder support. This wrapper cannot add model support to older ComfyUI builds. RAM/VRAM demand depends on model precision, references and output resolution; no universal minimum or speed guarantee is claimed.
 
-Import `workflows/Muse_QN_Edit_2.1_V1.json`. Reference uploads, transient edit state and output previews have been cleared. Upload your own images before editing. Select installed models in Muse Model Loader. The example LoRA is disabled in this distributable workflow; no LoRA is necessary just to install the nodes.
+Import `workflows/Muse_QN_Edit_2.1_V1.json`. The workflow also includes five ready-made style prompts (Pixar ×2, 90s anime ×2, Muppet) to paste into the prompt box. Reference uploads, transient edit state and output previews have been cleared. Upload your own images before editing. Select installed models in Muse Model Loader. The example LoRA is disabled in this distributable workflow; no LoRA is necessary just to install the nodes.
 
 Edit: Ref 1 is the edit target; other references provide additional content. Enter an edit instruction, generate, optionally Apply Edit to the preview, then Confirm to send the chosen result downstream. Text-to-image uses no references. Enhance operates on an input image. An enhancement can alter details/identity; compare the output instead of assuming faithful restoration.
 
 DLSS5 is disabled in the supplied workflow, but its nodes are retained, so its package is listed for loading the complete graph. Review that project's own additional requirements before enabling it. GGUF support is optional and requires ComfyUI-GGUF; the supplied workflow uses safetensors, not GGUF.
+
+## Updating an existing installation
+
+The installer skips folders that already exist, so it does not update them. To update, close ComfyUI, rename your existing `custom_nodes/Muse-QwenImage21-Edit` folder (keep it as a backup), then run the installer again or copy the new folder from `nodes`. Add `nodes/Muse-Save-Text` too if you don't have it. Then load the new workflow.
 
 ## Safety, support and release status
 

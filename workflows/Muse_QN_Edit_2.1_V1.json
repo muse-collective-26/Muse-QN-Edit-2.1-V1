@@ -1,8 +1,8 @@
 {
   "id": "49344438-e407-4d74-82f4-d274d321d515",
   "revision": 0,
-  "last_node_id": 6129,
-  "last_link_id": 14871,
+  "last_node_id": 6137,
+  "last_link_id": 14872,
   "nodes": [
     {
       "id": 6086,
@@ -18,7 +18,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 11,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -63,7 +63,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -108,7 +108,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 8,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -153,9 +153,128 @@
       "flags": {},
       "order": 0,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "upscaling_mode",
+          "name": "upscaling_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "upscaling_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "nr_preset",
+          "name": "nr_preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "nr_preset"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "nr_style",
+          "name": "nr_style",
+          "type": "COMBO",
+          "widget": {
+            "name": "nr_style"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "nr_intensity",
+          "name": "nr_intensity",
+          "type": "FLOAT",
+          "widget": {
+            "name": "nr_intensity"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "local_tone_strength",
+          "name": "local_tone_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "local_tone_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "local_structure_strength",
+          "name": "local_structure_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "local_structure_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "skin_structure_strength",
+          "name": "skin_structure_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "skin_structure_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "automatic_mask",
+          "name": "automatic_mask",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "automatic_mask"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dlss_model_preset",
+          "name": "dlss_model_preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "dlss_model_preset"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "motion",
+          "name": "motion",
+          "type": "COMBO",
+          "widget": {
+            "name": "motion"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scene_change_threshold",
+          "name": "scene_change_threshold",
+          "type": "FLOAT",
+          "widget": {
+            "name": "scene_change_threshold"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "warmup_frames",
+          "name": "warmup_frames",
+          "type": "INT",
+          "widget": {
+            "name": "warmup_frames"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "runtime_dir",
+          "name": "runtime_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "runtime_dir"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "settings",
           "name": "settings",
           "type": "DLSS5_SETTINGS",
           "links": [
@@ -169,7 +288,7 @@
         "Node name for S&R": "DLSS5Settings"
       },
       "widgets_values": [
-        "1.5x (Quality)",
+        "2x (Performance)",
         "Default",
         "Default",
         1,
@@ -184,7 +303,7 @@
         ""
       ],
       "widgets_values_named": {
-        "upscaling_mode": "1.5x (Quality)",
+        "upscaling_mode": "2x (Performance)",
         "nr_preset": "Default",
         "nr_style": "Default",
         "nr_intensity": 1,
@@ -213,9 +332,173 @@
       "flags": {},
       "order": 1,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "localized_name": "profile",
+          "name": "profile",
+          "type": "COMBO",
+          "widget": {
+            "name": "profile"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "pinned_memory_cap",
+          "name": "pinned_memory_cap",
+          "type": "COMBO",
+          "widget": {
+            "name": "pinned_memory_cap"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "low_vram_model",
+          "name": "low_vram_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "low_vram_model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "balanced_model",
+          "name": "balanced_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "balanced_model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "maximum_quality_model",
+          "name": "maximum_quality_model",
+          "type": "COMBO",
+          "widget": {
+            "name": "maximum_quality_model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_name",
+          "name": "clip_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "clip_type",
+          "name": "clip_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_1",
+          "name": "lora_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_1_strength",
+          "name": "lora_1_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_1_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_2",
+          "name": "lora_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_2_strength",
+          "name": "lora_2_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_2_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_3",
+          "name": "lora_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_3_strength",
+          "name": "lora_3_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_3_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_4",
+          "name": "lora_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_4_strength",
+          "name": "lora_4_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_4_strength"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_5",
+          "name": "lora_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "lora_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "lora_5_strength",
+          "name": "lora_5_strength",
+          "type": "FLOAT",
+          "widget": {
+            "name": "lora_5_strength"
+          },
+          "link": null
+        }
+      ],
       "outputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "links": [
@@ -224,6 +507,7 @@
           ]
         },
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "links": [
@@ -232,6 +516,7 @@
           ]
         },
         {
+          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
           "links": [
@@ -240,6 +525,7 @@
           ]
         },
         {
+          "localized_name": "status",
           "name": "status",
           "type": "STRING",
           "links": null
@@ -381,15 +667,15 @@
       "id": 6101,
       "type": "Image Comparer (rgthree)",
       "pos": [
-        6177.356015279378,
-        7270.86801504756
+        6169.013291702969,
+        7259.450401924418
       ],
       "size": [
         918.1416216162964,
         1283.5950658503061
       ],
       "flags": {},
-      "order": 15,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -419,38 +705,8 @@
         "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
         "comparer_mode": "Slide"
       },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00007_.png&type=temp&subfolder=&rand=0.22281178907280919"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00008_.png&type=temp&subfolder=&rand=0.39291068769705595"
-          }
-        ]
-      ],
-      "widgets_values_named": {
-        "rgthree_comparer": {
-          "images": [
-            {
-              "name": "A",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00007_.png&type=temp&subfolder=&rand=0.22281178907280919",
-              "img": {}
-            },
-            {
-              "name": "B",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_nzjjb_00008_.png&type=temp&subfolder=&rand=0.39291068769705595",
-              "img": {}
-            }
-          ]
-        }
-      },
+      "widgets_values": [],
+      "widgets_values_named": {},
       "color": "#3b0ea5",
       "bgcolor": "#000000"
     },
@@ -458,18 +714,19 @@
       "id": 6117,
       "type": "PreviewAny",
       "pos": [
-        6231.40668318278,
-        6661.931049642051
+        6168.240347532829,
+        6615.450161144919
       ],
       "size": [
         851.967982539395,
         538.3869035135804
       ],
       "flags": {},
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "source",
           "name": "source",
           "type": "*",
           "link": 14870
@@ -477,10 +734,11 @@
       ],
       "outputs": [
         {
+          "localized_name": "STRING",
           "name": "STRING",
           "type": "STRING",
           "links": [
-            14871
+            14872
           ]
         }
       ],
@@ -496,113 +754,39 @@
       "bgcolor": "#000000"
     },
     {
-      "id": 6128,
-      "type": "Save Text File",
-      "pos": [
-        7108.742349791229,
-        6805.434761655248
-      ],
-      "size": [
-        386.33575625933554,
-        366.6875303395
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 14871
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "was-ns",
-        "ver": "3.0.1",
-        "Node name for S&R": "Save Text File"
-      },
-      "widgets_values": [
-        "./ComfyUI/output/Muse Collective/Qwen2.1 Edit Prompt/[time(%Y-%m-%d)]",
-        "Qwen Edit Prompts",
-        "_",
-        4,
-        ".txt",
-        "utf-8",
-        ""
-      ],
-      "widgets_values_named": {
-        "path": "./ComfyUI/output/Muse Collective/Qwen2.1 Edit Prompt/[time(%Y-%m-%d)]",
-        "filename_prefix": "Qwen Edit Prompts",
-        "filename_delimiter": "_",
-        "filename_number_padding": 4,
-        "file_extension": ".txt",
-        "encoding": "utf-8",
-        "filename_suffix": ""
-      },
-      "color": "#3b0ea5",
-      "bgcolor": "#000000"
-    },
-    {
-      "id": 6120,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        3807.6760601919377,
-        8619.791811720837
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "wearing black hoodie and jeans",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "the woman in ref 1 is wearing the hoodie from ref 2 and standing with a plain seamless, shadowless white background behind her, facing the camera with her arms by her side. She also wears black tight fitting jeans and no jewellery. cropped to just below the waist"
-      ],
-      "widgets_values_named": {
-        "value": "the woman in ref 1 is wearing the hoodie from ref 2 and standing with a plain seamless, shadowless white background behind her, facing the camera with her arms by her side. She also wears black tight fitting jeans and no jewellery. cropped to just below the waist"
-      }
-    },
-    {
       "id": 3,
       "type": "SaveImage",
       "pos": [
-        7133.688541306228,
-        7292.151000289507
+        7111.044005884546,
+        7262.355558945189
       ],
       "size": [
         1172.7064460110196,
         1261.5993588950078
       ],
       "flags": {},
-      "order": 12,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 2
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "links": [
@@ -616,10 +800,10 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "ComfyUI"
+        "Muse Qwen Edit 2.1"
       ],
       "widgets_values_named": {
-        "filename_prefix": "ComfyUI"
+        "filename_prefix": "Muse Qwen Edit 2.1"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
@@ -628,25 +812,36 @@
       "id": 6111,
       "type": "SaveImage",
       "pos": [
-        9289.473198770824,
-        7297.703532448644
+        9259.28049802497,
+        7272.155862586768
       ],
       "size": [
         1004.7666726438929,
         1255.0705157901039
       ],
       "flags": {},
-      "order": 16,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 14867
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "links": null
@@ -658,10 +853,10 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "ComfyUI"
+        "Muse Qwen Edit 2.1"
       ],
       "widgets_values_named": {
-        "filename_prefix": "ComfyUI"
+        "filename_prefix": "Muse Qwen Edit 2.1"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
@@ -671,97 +866,27 @@
       "type": "MarkdownNote",
       "pos": [
         3341.467238273364,
-        7266.823112184829
+        7265.7396415904905
       ],
       "size": [
         441.66941188677583,
         1008.0794674268109
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "title": "Note: Model links",
       "properties": {},
       "widgets_values": [
-        "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
+        "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy the three folders inside `nodes` (Muse-QwenImage21-Edit, Muse-Model-Loader, Muse-Save-Text) into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
       ],
       "widgets_values_named": {
-        "text": "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy both folders inside `nodes` into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [WAS Node Suite — Revised](https://github.com/ltdrdata/was-node-suite-comfyui)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
+        "text": "## Custom Nodes\n\n- [Muse QN Edit 2.1 + Muse Model Loader — download ZIP](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/archive/refs/heads/main.zip) — extract and copy the three folders inside `nodes` (Muse-QwenImage21-Edit, Muse-Model-Loader, Muse-Save-Text) into `ComfyUI/custom_nodes`.\n- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)\n- [ComfyUI-DLSS5-Enhancer](https://github.com/Blueforcer/ComfyUI-DLSS5-Enhancer)\n\n**DLSS5 requires a separate runtime:** [Setup instructions](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/blob/main/DLSS5_SETUP.md).\n\n## Model Downloads\n\n**Diffusion model — used in this workflow:**\n\n- [qwen_image_2.1_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/diffusion_models/qwen_image_2.1_int8_convrot.safetensors)\n\n**Text encoder — used in this workflow:**\n\n- [qwen3vl_8b_int8_convrot.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/main/text_encoders/qwen3vl_8b_int8_convrot.safetensors)\n\n**Texture-fix VAE — used in this workflow:**\n\n- [texture_fix_vae_for_qwen_image_2.1_bf16.safetensors](https://huggingface.co/madebyollin/texture-fix-vae-for-qwen-image-2.1/resolve/main/texture_fix_vae_for_qwen_image_2.1_bf16.safetensors)\n\n**Optional detail-enhancement LoRA:**\n\n- [elusarcas-qwen2-1-detailer-v1.safetensors](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora/resolve/main/elusarcas-qwen2-1-detailer-v1.safetensors)\n- [LoRA usage information](https://huggingface.co/reverentelusarca/elusarcas-qwen-2.1-detail-enhancer-lora)\n\n**Alternative BF16 models and standard VAE:**\n\n- [All Comfy-Org Qwen Image 2.1 files](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/tree/main)\n\n## Model Storage Location\n\n```text\n📂 ComfyUI/\n└── 📂 models/\n    ├── 📂 diffusion_models/\n    │   └── qwen_image_2.1_int8_convrot.safetensors\n    ├── 📂 text_encoders/\n    │   └── qwen3vl_8b_int8_convrot.safetensors\n    ├── 📂 vae/\n    │   └── texture_fix_vae_for_qwen_image_2.1_bf16.safetensors\n    └── 📂 loras/\n        └── elusarcas-qwen2-1-detailer-v1.safetensors (optional)\n```\n\n## Licence\n\nQwen Image 2.1 is for research/evaluation use unless separately licensed commercially. [Official model licence](https://huggingface.co/Qwen/Qwen-Image-2.1/blob/main/LICENSE).\n\n## Report an Issue\n\n[Muse Collective — Issues](https://github.com/muse-collective-26/Muse-QN-Edit-2.1-V1/issues)"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
-    },
-    {
-      "id": 6125,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        3808.7430619344877,
-        8883.05869729338
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Character Sheet x5",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly five separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all five views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 40% of the sheet's width to this leftmost panel. Show a close-up, straight-on head-and-shoulders portrait, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other four panels. The bottom should crop at mid chest.\n\n2. FRONT FULL BODY: In the next 15% of the sheet's width, show the same person standing straight and facing directly forward, with both their face and body facing the viewer.\n\n3. LEFT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the left edge of the sheet. The head, torso and feet all face left.\n\n4. RIGHT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right.\n\n5. REAR FULL BODY: In the final 15%, show the person directly from behind, with the head and body facing away from the viewer, without looking over the shoulder.\n\nIn all four full-body panels, include the entire person from the top of the hair to the soles of the footwear, with small clear margins above and below. Use the same figure scale and align their feet along the same baseline. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large portrait and four full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
-      ],
-      "widgets_values_named": {
-        "value": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly five separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all five views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 40% of the sheet's width to this leftmost panel. Show a close-up, straight-on head-and-shoulders portrait, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other four panels. The bottom should crop at mid chest.\n\n2. FRONT FULL BODY: In the next 15% of the sheet's width, show the same person standing straight and facing directly forward, with both their face and body facing the viewer.\n\n3. LEFT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the left edge of the sheet. The head, torso and feet all face left.\n\n4. RIGHT-FACING FULL BODY: In the next 15%, show a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right.\n\n5. REAR FULL BODY: In the final 15%, show the person directly from behind, with the head and body facing away from the viewer, without looking over the shoulder.\n\nIn all four full-body panels, include the entire person from the top of the hair to the soles of the footwear, with small clear margins above and below. Use the same figure scale and align their feet along the same baseline. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large portrait and four full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
-      }
-    },
-    {
-      "id": 6127,
-      "type": "PrimitiveStringMultiline",
-      "pos": [
-        3812.453229203778,
-        9141.732421564004
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null
-        }
-      ],
-      "title": "Character Sheet x3",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.37.0",
-        "Node name for S&R": "PrimitiveStringMultiline"
-      },
-      "widgets_values": [
-        "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
-      ],
-      "widgets_values_named": {
-        "value": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels."
-      }
     },
     {
       "id": 6108,
@@ -775,22 +900,34 @@
         211.95636439098234
       ],
       "flags": {},
-      "order": 13,
-      "mode": 4,
+      "order": 15,
+      "mode": 0,
       "inputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "link": 14866
         },
         {
+          "localized_name": "settings",
           "name": "settings",
           "type": "DLSS5_SETTINGS",
           "link": 14865
+        },
+        {
+          "localized_name": "verify_neural_rendering",
+          "name": "verify_neural_rendering",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "verify_neural_rendering"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "images",
           "name": "images",
           "type": "IMAGE",
           "links": [
@@ -815,15 +952,15 @@
       "id": 6112,
       "type": "Image Comparer (rgthree)",
       "pos": [
-        8328.309743075466,
-        7290.738562802173
+        8309.216879606185,
+        7269.228527442682
       ],
       "size": [
         918.1416216162964,
         1283.5950658503061
       ],
       "flags": {},
-      "order": 17,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -853,38 +990,8 @@
         "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
         "comparer_mode": "Slide"
       },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00007_.png&type=temp&subfolder=&rand=0.02107468033850124"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00008_.png&type=temp&subfolder=&rand=0.17694167120229043"
-          }
-        ]
-      ],
-      "widgets_values_named": {
-        "rgthree_comparer": {
-          "images": [
-            {
-              "name": "A",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00007_.png&type=temp&subfolder=&rand=0.02107468033850124",
-              "img": {}
-            },
-            {
-              "name": "B",
-              "selected": true,
-              "url": "/api/view?filename=rgthree.compare._temp_jtnmp_00008_.png&type=temp&subfolder=&rand=0.17694167120229043",
-              "img": {}
-            }
-          ]
-        }
-      },
+      "widgets_values": [],
+      "widgets_values_named": {},
       "color": "#3b0ea5",
       "bgcolor": "#000000"
     },
@@ -896,31 +1003,224 @@
         7261.058147248338
       ],
       "size": [
-        1901.7636463075369,
-        2103
+        1891.4528622279831,
+        2468
       ],
       "flags": {},
-      "order": 10,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
+          "localized_name": "model",
           "name": "model",
           "type": "MODEL",
           "link": 14852
         },
         {
+          "localized_name": "clip",
           "name": "clip",
           "type": "CLIP",
           "link": 14853
         },
         {
+          "localized_name": "vae",
           "name": "vae",
           "type": "VAE",
           "link": 14854
+        },
+        {
+          "localized_name": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "megapixels",
+          "name": "megapixels",
+          "type": "FLOAT",
+          "widget": {
+            "name": "megapixels"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "multiple",
+          "name": "multiple",
+          "type": "INT",
+          "widget": {
+            "name": "multiple"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "custom_size",
+          "name": "custom_size",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_size"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "reference_resolution",
+          "name": "reference_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "reference_resolution"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cfg",
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "sampler_name",
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "scheduler",
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "steps",
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cache_device",
+          "name": "cache_device",
+          "type": "COMBO",
+          "widget": {
+            "name": "cache_device"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "cache_dtype",
+          "name": "cache_dtype",
+          "type": "COMBO",
+          "widget": {
+            "name": "cache_dtype"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "refs_data",
+          "name": "refs_data",
+          "type": "STRING",
+          "widget": {
+            "name": "refs_data"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "state_json",
+          "name": "state_json",
+          "type": "STRING",
+          "widget": {
+            "name": "state_json"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "enhance_resolution_multiply",
+          "name": "enhance_resolution_multiply",
+          "type": "COMBO",
+          "widget": {
+            "name": "enhance_resolution_multiply"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dataset_views",
+          "name": "dataset_views",
+          "type": "COMBO",
+          "widget": {
+            "name": "dataset_views"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dataset_width",
+          "name": "dataset_width",
+          "type": "INT",
+          "widget": {
+            "name": "dataset_width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "dataset_height",
+          "name": "dataset_height",
+          "type": "INT",
+          "widget": {
+            "name": "dataset_height"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
+          "localized_name": "image",
           "name": "image",
           "type": "IMAGE",
           "links": [
@@ -930,16 +1230,19 @@
           ]
         },
         {
+          "localized_name": "positive",
           "name": "positive",
           "type": "CONDITIONING",
           "links": []
         },
         {
+          "localized_name": "negative",
           "name": "negative",
           "type": "CONDITIONING",
           "links": []
         },
         {
+          "localized_name": "compiled_prompt",
           "name": "compiled_prompt",
           "type": "STRING",
           "links": [
@@ -947,6 +1250,7 @@
           ]
         },
         {
+          "localized_name": "before_image",
           "name": "before_image",
           "type": "IMAGE",
           "links": [
@@ -960,52 +1264,400 @@
         "muse_qwen21_prompts": {
           "enhance": "Enhance this image to high resolution with rich fine details. Sharpen textures and surfaces, add natural microdetails, and improve clarity and definition across the image while preserving the original composition, lighting, atmosphere, and visual style. The input may be an illustration or a real photograph; preserve the original style.",
           "text_to_image": "Ultra-high-resolution photorealistic head-and-shoulders portrait of an older male sailor standing beside the sea, photographed as an intimate environmental portrait with exceptional facial micro-detail and completely natural skin texture.\n\nThe man is approximately 65 years old, with a strong, weathered face shaped by decades spent working outdoors at sea. He has a slightly rugged appearance rather than looking like a fashion model. His face has believable age: fine lines around the eyes, deeper forehead creases, crow's feet, subtle under-eye texture, nasolabial folds, small variations in pigmentation, faint sun spots, visible pores, tiny imperfections and naturally uneven skin tone. His skin is healthy but genuinely weathered by years of exposure to wind, salt and sunlight.\n\nHe has a short, thick salt-and-pepper beard, predominantly silver-grey with scattered darker hairs. The beard is slightly rough and imperfect rather than precisely groomed. Render individual beard hairs with different lengths, directions and shades. A few coarse silver hairs catch the light. His moustache blends naturally into the beard, with individual hairs visible around the upper lip.\n\nHis hair is short, slightly wavy and mostly silver-grey, with darker remnants around the sides and back. It has been disturbed by the coastal wind, creating loose strands and small flyaway hairs rather than a perfectly styled shape.\n\nHis eyes are pale blue-grey and extremely detailed, with complex iris fibres, subtle colour variation, moist natural highlights, tiny blood vessels in the whites of the eyes and realistic reflections of the bright coastal environment. His expression is calm, thoughtful and quietly confident, with the subtle intensity of someone accustomed to spending long periods at sea. He looks slightly past the camera rather than directly posing for it.\n\nHis eyebrows are thick and naturally irregular, containing a mixture of grey, white and darker hairs. Individual eyelashes should remain visible without appearing artificially sharp.\n\nFrame him closely from approximately the upper chest upward. His head and face occupy a substantial portion of the image, allowing extremely close inspection of facial detail. Do not crop the top of his head. Include both shoulders naturally within the frame.\n\nHe wears a heavy dark navy fisherman's wool jumper beneath a faded, weathered navy sailing jacket. The jacket is partially open at the neck. Its material shows realistic wear from years of use: subtle creasing, faded areas, stitching, seams, tiny salt marks, slightly worn edges and aged metal hardware. The wool jumper beneath has clearly visible knitted fibres and an authentic coarse maritime texture.\n\nAround his neck is a simple thin cord carrying a small, worn brass maritime pendant, only partially visible beneath the clothing. The brass has subtle oxidation, tiny scratches and naturally aged surface detail.\n\nThe portrait is photographed outdoors beside a working harbour on a cool coastal morning.\n\nBehind him is the sea, rendered naturally out of focus through genuine optical depth of field. The water is deep slate blue with subtle turquoise and steel-grey variations. Small waves and white highlights catch the morning light.\n\nIn the distant background, softly blurred fishing boats and sailing vessels are visible. Masts, ropes and rigging create delicate vertical and diagonal lines without distracting from his face. A weathered harbour wall and distant rocky coastline are faintly visible further behind him.\n\nThe coastal wind subtly affects the portrait. Several strands of his silver hair move naturally, individual beard hairs lift slightly, and the collar of his jacket responds gently to the breeze.\n\nSoft directional morning sunlight comes from approximately 45 degrees to one side of the camera, producing beautiful modelling across the man's face. The light reveals skin texture rather than smoothing it. Fine wrinkles and pores remain visible while the overall portrait remains flattering and photographic.\n\nA subtle cool fill comes naturally from the open sky and reflected sea. Very gentle warm highlights from the low sun contrast with the cooler maritime environment.\n\nThe eyes contain small, physically believable catchlights. Moisture along the lower eyelids catches tiny highlights. The nose, cheeks and forehead have extremely subtle natural skin sheen without looking oily or artificially glossy.\n\nPay particular attention to realistic transitions between skin and hair: individual beard follicles emerging naturally from the face, tiny grey hairs along the cheeks and jawline, subtle stubble between the fuller beard hairs, realistic eyebrow roots and fine facial hair catching backlight around the edges of the face.\n\nRender extremely fine facial micro-detail suitable for close inspection at very high resolution: pores, fine wrinkles, individual beard hairs, eyelashes, eyebrow hairs, tiny skin imperfections, subtle pigmentation, lip texture, small creases around the mouth, individual iris fibres and natural moisture in the eyes.\n\nHis lips are naturally textured and slightly weathered by the coastal environment, with subtle vertical lines and realistic colour variation.\n\nHands are not visible. The composition is specifically designed as a facial-resolution test rather than a full-body portrait.\n\nPhotographed using the aesthetic of a professional high-resolution medium-format camera with an approximately 100mm portrait lens, camera at eye level, shallow but controlled depth of field around f/4. The man's entire face, eyes and beard remain critically detailed while the harbour and sea transition smoothly into natural optical softness.\n\nFocus is precisely on the nearest eye while sufficient depth of field keeps both eyes, the nose, beard and most of the face convincingly sharp.\n\nNatural perspective, no wide-angle facial distortion.\n\nExtremely high resolving power with genuine micro-contrast. Fine details should remain distinct rather than being created through artificial sharpening.\n\nNatural photographic colour science with restrained saturation, realistic skin tones, subtle cool maritime blues and gently warm highlights.\n\nThe final image should resemble a premium editorial portrait made for a large-format photography exhibition or high-end documentary magazine: intimate, authentic, understated and exceptionally detailed.\n\nPrioritise believable photographic detail over perfection. Do not beautify away his age. Preserve pores, wrinkles, pigmentation, beard irregularities and natural asymmetry.\n\nNo plastic or waxy skin, no excessive skin smoothing, no artificial HDR appearance, no painterly texture, no exaggerated cinematic colour grading, no artificial edge sharpening.\n\nThe image should withstand extreme enlargement, with meaningful fine information visible throughout the man's face, eyes, hair, beard and clothing while retaining the natural appearance of a genuine high-resolution photograph.",
-          "edit": "Edit REF 1 directly. REF 1 is the target image to be modified. REF 2 is the replacement character.\n\nREPLACE EVERY GREY MANNEQUIN FIGURE VISIBLE IN REF 1 WITH THE HUMAN CHARACTER FROM REF 2.\n\nThe grey mannequin is NOT part of the background or template design. It is a placeholder character that MUST be removed and replaced.\n\nThere are THREE grey mannequin representations in REF 1 and ALL THREE must be replaced by the SAME character from REF 2:\n\n1. Replace the LARGE grey mannequin close-up on the LEFT with a LARGE close-up of the character from REF 2. The character's head, face, hair, neck, shoulders and upper torso must occupy the same large area as the grey mannequin currently occupies. Preserve the mannequin's existing crop, scale, framing and position.\n\n2. Replace the FRONT-FACING full-body grey mannequin in the CENTRE with a full-body front view of the character from REF 2. Preserve its existing position, scale, pose and framing.\n\n3. Replace the SIDE-PROFILE full-body grey mannequin on the RIGHT with a side-profile view of the SAME character from REF 2. Preserve its existing position, scale, pose, orientation and framing.\n\nREF 2 is the ONLY source for character identity and appearance. Preserve the character's face, hairstyle, hair colour, body proportions, clothing, footwear and other visible details consistently across all three replacements.\n\nFor the side profile, infer the character's corresponding side appearance naturally from REF 2 while maintaining the same identity and clothing.\n\nCRITICAL EDIT REQUIREMENTS:\n\nREMOVE AND REPLACE EVERY GREY MANNEQUIN.\nZERO GREY MANNEQUINS may remain in the final image.\nThe large grey mannequin close-up on the left MUST NOT remain.\nDo not treat the large grey mannequin as background artwork.\nDo not preserve the mannequin's grey head, face, skin or body.\nDo not place the new character beside or over the mannequin while leaving the mannequin visible.\n\nPreserve REF 1's exact layout.\nPreserve the exact white background.\nPreserve the relative size and position of all three existing figures.\nDo not redesign the character sheet.\nDo not create a new layout.\nDo not add additional people or views.\nDo not make all three character representations the same size.\n\nThis is an IN-PLACE CHARACTER REPLACEMENT of REF 1:\nGREY MANNEQUIN = REMOVE.\nCHARACTER FROM REF 2 = REPLACE IT.\n\nFinal result: exactly THREE representations of the character from REF 2 and ZERO representations of the grey mannequin."
+          "edit": "Edit REF 1 directly. REF 1 is the target image to be modified. REF 2 is the replacement character.\n\nREPLACE EVERY GREY MANNEQUIN FIGURE VISIBLE IN REF 1 WITH THE HUMAN CHARACTER FROM REF 2.\n\nThe grey mannequin is NOT part of the background or template design. It is a placeholder character that MUST be removed and replaced.\n\nThere are THREE grey mannequin representations in REF 1 and ALL THREE must be replaced by the SAME character from REF 2:\n\n1. Replace the LARGE grey mannequin close-up on the LEFT with a LARGE close-up of the character from REF 2. The character's head, face, hair, neck, shoulders and upper torso must occupy the same large area as the grey mannequin currently occupies. Preserve the mannequin's existing crop, scale, framing and position.\n\n2. Replace the FRONT-FACING full-body grey mannequin in the CENTRE with a full-body front view of the character from REF 2. Preserve its existing position, scale, pose and framing.\n\n3. Replace the SIDE-PROFILE full-body grey mannequin on the RIGHT with a side-profile view of the SAME character from REF 2. Preserve its existing position, scale, pose, orientation and framing.\n\nREF 2 is the ONLY source for character identity and appearance. Preserve the character's face, hairstyle, hair colour, body proportions, clothing, footwear and other visible details consistently across all three replacements.\n\nFor the side profile, infer the character's corresponding side appearance naturally from REF 2 while maintaining the same identity and clothing.\n\nCRITICAL EDIT REQUIREMENTS:\n\nREMOVE AND REPLACE EVERY GREY MANNEQUIN.\nZERO GREY MANNEQUINS may remain in the final image.\nThe large grey mannequin close-up on the left MUST NOT remain.\nDo not treat the large grey mannequin as background artwork.\nDo not preserve the mannequin's grey head, face, skin or body.\nDo not place the new character beside or over the mannequin while leaving the mannequin visible.\n\nPreserve REF 1's exact layout.\nPreserve the exact white background.\nPreserve the relative size and position of all three existing figures.\nDo not redesign the character sheet.\nDo not create a new layout.\nDo not add additional people or views.\nDo not make all three character representations the same size.\n\nThis is an IN-PLACE CHARACTER REPLACEMENT of REF 1:\nGREY MANNEQUIN = REMOVE.\nCHARACTER FROM REF 2 = REPLACE IT.\n\nFinal result: exactly THREE representations of the character from REF 2 and ZERO representations of the grey mannequin.",
+          "refmod_dataset": ""
         }
       },
       "widgets_values": [
         "16:9 (Widescreen)",
-        1,
+        2,
         32,
-        true,
+        false,
         0,
         "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels.",
         "",
         1,
         "euler",
         "simple",
-        25,
-        376726376662184,
+        40,
+        387539056458046,
         "randomize",
         "gpu",
         "int8",
         "{\"refs\":[null,null,null,null,null,null,null,null,null,null]}",
-        "{\"action\":null,\"session_id\":\"38991c81-f190-496f-920f-3ce75be40f5a\"}",
+        "{\"action\": null, \"session_id\": \"78ae9f40-ba9e-48d4-9c9d-2b8b3bd8e5e1\"}",
         "edit",
         "1x",
+        "both",
+        1152,
+        2048,
         ""
       ],
       "widgets_values_named": {
         "aspect_ratio": "16:9 (Widescreen)",
-        "megapixels": 1,
+        "megapixels": 2,
         "multiple": 32,
-        "custom_size": true,
+        "custom_size": false,
         "reference_resolution": 0,
         "prompt": "Create a single landscape 16:9 character reference sheet showing the person from the reference image in exactly three separate views, arranged side by side in one horizontal row.\n\nPreserve the reference person's identity, appearance, body proportions, hairstyle, clothing, accessories and visual style consistently across all three views.\n\nUse this exact layout from left to right:\n\n1. LARGE FRONT PORTRAIT: Allocate approximately 50% of the sheet's width to the leftmost panel. Show a straight-on portrait from the top of the head to just below the shoulders, looking directly at the viewer. Include the entire head and hair with a small margin above. Make the face substantially larger than the faces in the other two panels.\n\n2. FRONT FULL BODY: Allocate the next 25% to the same person standing straight, with both their face and body facing directly toward the viewer. Include the entire person from the top of the hair to the soles of the footwear.\n\n3. SIDE-PROFILE FULL BODY: Allocate the final 25% to a true 90-degree side profile, with the nose pointing toward the right edge of the sheet. The head, torso and feet all face right. Include the entire person from the top of the hair to the soles of the footwear. No three-quarter angle or head turned toward the viewer.\n\nIn both full-body panels, use the same figure scale and align the feet along the same baseline. Leave small clear margins above the head and below the footwear. Keep the standing posture neutral, with arms resting naturally beside the body.\n\nUse a plain white background, consistent soft lighting and narrow, even gutters between panels. Keep every view inside its own panel. Exactly one large chest-up portrait and two full-body views; no additional views, overlapping figures, inset images, captions or panel labels.",
         "negative_prompt": "",
         "cfg": 1,
         "sampler_name": "euler",
         "scheduler": "simple",
-        "steps": 25,
-        "seed": 376726376662184,
+        "steps": 40,
+        "seed": 387539056458046,
         "control_after_generate": "randomize",
         "cache_device": "gpu",
         "cache_dtype": "int8",
         "refs_data": "{\"refs\":[null,null,null,null,null,null,null,null,null,null]}",
-        "state_json": "{\"action\":null,\"session_id\":\"38991c81-f190-496f-920f-3ce75be40f5a\"}",
+        "state_json": "{\"action\": null, \"session_id\": \"78ae9f40-ba9e-48d4-9c9d-2b8b3bd8e5e1\"}",
         "mode": "edit",
         "enhance_resolution_multiply": "1x",
+        "dataset_views": "both",
+        "dataset_width": 1152,
+        "dataset_height": 2048,
         "mquwen21_ui": ""
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6130,
+      "type": "MuseSaveText",
+      "pos": [
+        7046.5247580323,
+        6621.317070169674
+      ],
+      "size": [
+        464.7547563630915,
+        340.8544715281723
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "link": 14872
+        },
+        {
+          "localized_name": "path",
+          "name": "path",
+          "type": "STRING",
+          "widget": {
+            "name": "path"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_suffix",
+          "name": "filename_suffix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_suffix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "filename_number_padding",
+          "name": "filename_number_padding",
+          "type": "INT",
+          "widget": {
+            "name": "filename_number_padding"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "file_extension",
+          "name": "file_extension",
+          "type": "COMBO",
+          "widget": {
+            "name": "file_extension"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "text",
+          "name": "text",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "saved_path",
+          "name": "saved_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseSaveText"
+      },
+      "widgets_values": [
+        "Muse Collective/Qwen Edit 2.1 Prompts/{date}",
+        "Qwen Edit Prompts",
+        "",
+        4,
+        ".txt"
+      ],
+      "widgets_values_named": {
+        "path": "Muse Collective/Qwen Edit 2.1 Prompts/{date}",
+        "filename_prefix": "Qwen Edit Prompts",
+        "filename_suffix": "",
+        "filename_number_padding": 4,
+        "file_extension": ".txt"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6133,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        4623.565004270433,
+        6376.493579624365
+      ],
+      "size": [
+        553.55473996618,
+        307.48831797632556
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Disney Pixar Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.3",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Transform this person into a 3D animated character in the style of a modern Disney Pixar feature film, keeping their identity, hairstyle, hair colour, skin tone, clothing, accessories and pose. Restyle their anatomy with stylised animated proportions rather than realistic ones: make the head slightly oversized relative to the body, about six heads tall; enlarge the eyes to roughly twice their realistic size with big glossy irises, bright catchlights and defined lashes; shrink the nose to a small, softly rounded, slightly upturned shape; give a small mouth with a defined upper lip and a softly tapered jaw and chin. Exaggerate their natural body type into a clean, stylised silhouette with strong contrast between wide and narrow areas — narrow waist, slim wrists and ankles, small hands and feet, and long tapered limbs — pushing their own build further rather than changing it into someone else’s: a broad person becomes broader through the chest and shoulders, a curvy person becomes more curved, a slim person becomes longer and more slender. Simplify all anatomy into smooth, rounded sculpted forms. Render skin as smooth, poreless and evenly toned with soft subsurface scattering; sculpt hair into large glossy clumped locks; simplify clothing into clean matte fabric with soft folds and subtle knit texture. Soft diffuse cinematic lighting with gentle bounce light, warm slightly muted colour palette, shallow depth of field, high-quality 3D animated feature film render.\n\n"
+      ],
+      "widgets_values_named": {
+        "value": "Transform this person into a 3D animated character in the style of a modern Disney Pixar feature film, keeping their identity, hairstyle, hair colour, skin tone, clothing, accessories and pose. Restyle their anatomy with stylised animated proportions rather than realistic ones: make the head slightly oversized relative to the body, about six heads tall; enlarge the eyes to roughly twice their realistic size with big glossy irises, bright catchlights and defined lashes; shrink the nose to a small, softly rounded, slightly upturned shape; give a small mouth with a defined upper lip and a softly tapered jaw and chin. Exaggerate their natural body type into a clean, stylised silhouette with strong contrast between wide and narrow areas — narrow waist, slim wrists and ankles, small hands and feet, and long tapered limbs — pushing their own build further rather than changing it into someone else’s: a broad person becomes broader through the chest and shoulders, a curvy person becomes more curved, a slim person becomes longer and more slender. Simplify all anatomy into smooth, rounded sculpted forms. Render skin as smooth, poreless and evenly toned with soft subsurface scattering; sculpt hair into large glossy clumped locks; simplify clothing into clean matte fabric with soft folds and subtle knit texture. Soft diffuse cinematic lighting with gentle bounce light, warm slightly muted colour palette, shallow depth of field, high-quality 3D animated feature film render.\n\n"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6134,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        5244.728533819045,
+        6381.408007116823
+      ],
+      "size": [
+        553.55473996618,
+        307.48831797632556
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "90's Retro Anime",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.3",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Transform this person into a 1990s retro anime character, in the style of late-80s and 90s hand-drawn cel animation with a clean modern digital finish, keeping their identity, hairstyle, hair colour, skin tone, clothing, accessories and pose. Use mature, realistic adult anime proportions, slightly elongated: about eight heads tall, long slender neck with visible tendons, sharply defined collarbones and shoulder bones, slim torso, long elegant hands with long fingers. Keep their natural body type but render it longer, leaner and more angular. Redraw the face as a long oval with high sharp cheekbones, a narrow angular jaw and pointed chin; narrow almond-shaped heavy-lidded eyes with a thick dark upper lash line and a subtle winged flick, sharp slanted expressive eyebrows; a long thin nose drawn with minimal line and a single side shadow; full, defined lips with a small glossy highlight; a cool, aloof, half-lidded expression. Render hair as large voluminous sharp tapered clumps with loose flyaway strands, flat two-tone colour and a bright highlight band. Hard-edged cel shading with flat base colours and a single crisp shadow tone, thin dark line art, clothing in flat colour with a few sharp fold lines. Muted, slightly faded colour palette, warm skin tones, subtle film grain, softly painted detailed background in the style of 90s anime background art, gentle bloom on light sources.\n\n\n"
+      ],
+      "widgets_values_named": {
+        "value": "Transform this person into a 1990s retro anime character, in the style of late-80s and 90s hand-drawn cel animation with a clean modern digital finish, keeping their identity, hairstyle, hair colour, skin tone, clothing, accessories and pose. Use mature, realistic adult anime proportions, slightly elongated: about eight heads tall, long slender neck with visible tendons, sharply defined collarbones and shoulder bones, slim torso, long elegant hands with long fingers. Keep their natural body type but render it longer, leaner and more angular. Redraw the face as a long oval with high sharp cheekbones, a narrow angular jaw and pointed chin; narrow almond-shaped heavy-lidded eyes with a thick dark upper lash line and a subtle winged flick, sharp slanted expressive eyebrows; a long thin nose drawn with minimal line and a single side shadow; full, defined lips with a small glossy highlight; a cool, aloof, half-lidded expression. Render hair as large voluminous sharp tapered clumps with loose flyaway strands, flat two-tone colour and a bright highlight band. Hard-edged cel shading with flat base colours and a single crisp shadow tone, thin dark line art, clothing in flat colour with a few sharp fold lines. Muted, slightly faded colour palette, warm skin tones, subtle film grain, softly painted detailed background in the style of 90s anime background art, gentle bloom on light sources.\n\n\n"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6135,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        4621.847226620086,
+        6782.91951586554
+      ],
+      "size": [
+        553.55473996618,
+        307.48831797632556
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "Disney Pixar Prompt V2",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.3",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "\nConvert this exact person into a 3D animated character in the style of a modern Disney Pixar feature film. This is a style conversion only: the character must be clearly recognisable as the same person, as if Pixar had designed a caricature of them. Preserve all of their real features and translate each one into the Pixar style, exaggerating what makes them distinctive rather than replacing it:\n\nFace: keep their own face shape, jawline, cheekbones, eye shape, eye colour, eyebrow shape, nose shape, lip shape and their current expression. Enlarge the eyes to roughly twice their realistic size while keeping their shape and colour, with big glossy irises, bright catchlights and defined lashes. Keep their nose shape but simplify it into a soft, rounded sculpted form — if their nose is a defining feature, exaggerate it rather than shrinking it. Push their defining facial traits further: a strong jaw becomes chunkier, round cheeks become rounder, a narrow face becomes narrower. Eyebrows become thick, cleanly sculpted shapes in their own shape and colour.\n\nFacial hair: keep the face exactly as it is in the photo — don’t add or invent anything that isn’t there.\n\nHair: keep their exact hairstyle — same length, cut, parting, texture, curl pattern and colour, tied or loose as shown. Short hair stays short, bald stays bald, curly hair stays curly. Only change how it is rendered: sculpted into large glossy clumped locks with soft highlights. Do not add volume or length beyond a slight stylised lift.\n\nDistinguishing details: keep freckles, moles, scars, tattoos, piercings, glasses, makeup and jewellery, simplified into clean stylised versions in the same places.\n\nBody: keep their own build, age and body type, then exaggerate it into a stylised animated silhouette with strong contrast between wide and narrow areas. Make the head slightly oversized relative to the body, about six heads tall. Push their natural build further rather than changing it: a broad, muscular person becomes broader through the chest, shoulders and arms; a curvy person becomes more curved, with a narrower waist and fuller hips; a slim person becomes longer and more slender; a heavy-set person becomes rounder and softer. Taper the wrists and ankles and simplify all anatomy into smooth, rounded sculpted forms.\n\nClothing, pose and background: keep the same clothing, pose, framing and setting, simplified into clean matte fabric with soft folds and subtle weave or knit texture.\n\nRendering: smooth, poreless, evenly toned skin with soft subsurface scattering; wet, glassy eyes; soft diffuse cinematic lighting with gentle bounce light and a soft rim light; a warm, slightly muted colour palette; shallow depth of field with a softly blurred background; high-quality 3D animated feature film render."
+      ],
+      "widgets_values_named": {
+        "value": "\nConvert this exact person into a 3D animated character in the style of a modern Disney Pixar feature film. This is a style conversion only: the character must be clearly recognisable as the same person, as if Pixar had designed a caricature of them. Preserve all of their real features and translate each one into the Pixar style, exaggerating what makes them distinctive rather than replacing it:\n\nFace: keep their own face shape, jawline, cheekbones, eye shape, eye colour, eyebrow shape, nose shape, lip shape and their current expression. Enlarge the eyes to roughly twice their realistic size while keeping their shape and colour, with big glossy irises, bright catchlights and defined lashes. Keep their nose shape but simplify it into a soft, rounded sculpted form — if their nose is a defining feature, exaggerate it rather than shrinking it. Push their defining facial traits further: a strong jaw becomes chunkier, round cheeks become rounder, a narrow face becomes narrower. Eyebrows become thick, cleanly sculpted shapes in their own shape and colour.\n\nFacial hair: keep the face exactly as it is in the photo — don’t add or invent anything that isn’t there.\n\nHair: keep their exact hairstyle — same length, cut, parting, texture, curl pattern and colour, tied or loose as shown. Short hair stays short, bald stays bald, curly hair stays curly. Only change how it is rendered: sculpted into large glossy clumped locks with soft highlights. Do not add volume or length beyond a slight stylised lift.\n\nDistinguishing details: keep freckles, moles, scars, tattoos, piercings, glasses, makeup and jewellery, simplified into clean stylised versions in the same places.\n\nBody: keep their own build, age and body type, then exaggerate it into a stylised animated silhouette with strong contrast between wide and narrow areas. Make the head slightly oversized relative to the body, about six heads tall. Push their natural build further rather than changing it: a broad, muscular person becomes broader through the chest, shoulders and arms; a curvy person becomes more curved, with a narrower waist and fuller hips; a slim person becomes longer and more slender; a heavy-set person becomes rounder and softer. Taper the wrists and ankles and simplify all anatomy into smooth, rounded sculpted forms.\n\nClothing, pose and background: keep the same clothing, pose, framing and setting, simplified into clean matte fabric with soft folds and subtle weave or knit texture.\n\nRendering: smooth, poreless, evenly toned skin with soft subsurface scattering; wet, glassy eyes; soft diffuse cinematic lighting with gentle bounce light and a soft rim light; a warm, slightly muted colour palette; shallow depth of field with a softly blurred background; high-quality 3D animated feature film render."
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6136,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        5241.301007165471,
+        6781.174575638647
+      ],
+      "size": [
+        553.55473996618,
+        307.48831797632556
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "90's Retro Anime v2",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.3",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Convert this exact person into a 1990s retro anime character, in the style of late-80s and 90s hand-drawn cel animation with a clean modern digital finish. This is a style conversion only: the character must be clearly recognisable as the same person. Preserve all of their real features and translate each one into the anime style rather than replacing it:\n\nFace: keep their own face shape, jawline, cheekbones, eye shape, eye colour, eyebrow shape, nose shape and lip shape, and their current expression; draw them with mature adult anime simplification — slightly sharpen the jaw and cheekbones, a heavy dark upper lash line, the nose drawn with minimal line and a single side shadow, the lips with a small glossy highlight. Eyes stay roughly their real size, not enlarged.\n\nFacial hair: keep any beard, moustache or stubble exactly as it is — same shape, length, density and colour — drawn as flat sculpted shapes with tapered edges, or fine shading for stubble. Do not add or remove facial hair.\n\nHair: keep their exact hairstyle — same length, cut, parting, texture, curl pattern and colour, tied or loose as shown. Short hair stays short, bald stays bald, straight hair stays straight. Only change how it is drawn: grouped into sharp tapered clumps with a few loose strands, flat two-tone colour and a bright highlight band. Do not add volume or length.\n\nDistinguishing details: keep freckles, moles, scars, tattoos, piercings, glasses, makeup and jewellery, redrawn in clean anime line and flat colour.\n\nBody: keep their own build, age and body type, rendered slightly longer, leaner and more angular — about eight heads tall, a longer neck, clearly defined collarbones and shoulder bones, long elegant hands.\n\nClothing, pose and background: keep the same clothing, pose, framing and setting, redrawn in the style.\n\nRendering: hard-edged cel shading with flat base colours and a single crisp shadow tone, thin dark line art, clothing in flat colour with a few sharp fold lines, a muted and slightly faded palette, subtle film grain, a softly painted background like 90s anime background art, gentle bloom on light sources.\n\n\n\n"
+      ],
+      "widgets_values_named": {
+        "value": "Convert this exact person into a 1990s retro anime character, in the style of late-80s and 90s hand-drawn cel animation with a clean modern digital finish. This is a style conversion only: the character must be clearly recognisable as the same person. Preserve all of their real features and translate each one into the anime style rather than replacing it:\n\nFace: keep their own face shape, jawline, cheekbones, eye shape, eye colour, eyebrow shape, nose shape and lip shape, and their current expression; draw them with mature adult anime simplification — slightly sharpen the jaw and cheekbones, a heavy dark upper lash line, the nose drawn with minimal line and a single side shadow, the lips with a small glossy highlight. Eyes stay roughly their real size, not enlarged.\n\nFacial hair: keep any beard, moustache or stubble exactly as it is — same shape, length, density and colour — drawn as flat sculpted shapes with tapered edges, or fine shading for stubble. Do not add or remove facial hair.\n\nHair: keep their exact hairstyle — same length, cut, parting, texture, curl pattern and colour, tied or loose as shown. Short hair stays short, bald stays bald, straight hair stays straight. Only change how it is drawn: grouped into sharp tapered clumps with a few loose strands, flat two-tone colour and a bright highlight band. Do not add volume or length.\n\nDistinguishing details: keep freckles, moles, scars, tattoos, piercings, glasses, makeup and jewellery, redrawn in clean anime line and flat colour.\n\nBody: keep their own build, age and body type, rendered slightly longer, leaner and more angular — about eight heads tall, a longer neck, clearly defined collarbones and shoulder bones, long elegant hands.\n\nClothing, pose and background: keep the same clothing, pose, framing and setting, redrawn in the style.\n\nRendering: hard-edged cel shading with flat base colours and a single crisp shadow tone, thin dark line art, clothing in flat colour with a few sharp fold lines, a muted and slightly faded palette, subtle film grain, a softly painted background like 90s anime background art, gentle bloom on light sources.\n\n\n\n"
+      },
+      "color": "#3b0ea5",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 6137,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        4031.6785356793985,
+        6373.215033879249
+      ],
+      "size": [
+        553.55473996618,
+        307.48831797632556
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "title": "Muppet Prompt",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.3",
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "Convert this exact person into a Muppet-style felt puppet, photographed as a real handmade physical puppet. The puppet must be clearly recognisable as the same person. Keep their face shape, eye colour, eyebrow shape, skin tone, hairstyle, hair colour and length, clothing, accessories and pose exactly as in the photo, translated into puppet construction — don’t add or invent anything that isn’t there. Skin made of soft fuzzy felt with visible fibres, matching their skin tone. Large ping-pong-ball eyes set close together with felt eyelids and pupils in their eye colour. A big round felt-covered foam nose shaped like their own nose. A wide hinged puppet mouth with a pink felt tongue. Eyebrows as felt strips in their shape. Hair as a chunky faux-fur wig in their exact hairstyle. Mitten-like felt hands with three fingers and a thumb. Big head, soft slightly lumpy body, about four to five heads tall, keeping their own build. Clothing, glasses and accessories are real fabric and materials, scaled to fit the puppet. Soft studio lighting, realistic photograph of a physical puppet.\n\n\n"
+      ],
+      "widgets_values_named": {
+        "value": "Convert this exact person into a Muppet-style felt puppet, photographed as a real handmade physical puppet. The puppet must be clearly recognisable as the same person. Keep their face shape, eye colour, eyebrow shape, skin tone, hairstyle, hair colour and length, clothing, accessories and pose exactly as in the photo, translated into puppet construction — don’t add or invent anything that isn’t there. Skin made of soft fuzzy felt with visible fibres, matching their skin tone. Large ping-pong-ball eyes set close together with felt eyelids and pupils in their eye colour. A big round felt-covered foam nose shaped like their own nose. A wide hinged puppet mouth with a pink felt tongue. Eyebrows as felt strips in their shape. Hair as a chunky faux-fur wig in their exact hairstyle. Mitten-like felt hands with three fingers and a thumb. Big head, soft slightly lumpy body, about four to five heads tall, keeping their own build. Clothing, glasses and accessories are real fabric and materials, scaled to fit the puppet. Soft studio lighting, realistic photograph of a physical puppet.\n\n\n"
       },
       "color": "#3b0ea5",
       "bgcolor": "#000000"
@@ -1133,10 +1785,10 @@
       "STRING"
     ],
     [
-      14871,
+      14872,
       6117,
       0,
-      6128,
+      6130,
       0,
       "STRING"
     ]
@@ -1145,17 +1797,12 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.2673486306413793,
+      "scale": 0.6,
       "offset": [
-        -1581.0704936754778,
-        -5700.56764088585
+        0,
+        0
       ]
-    },
-    "frontendVersion": "1.52.7",
-    "VHS_latentpreview": false,
-    "VHS_latentpreviewrate": 0,
-    "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    }
   },
   "version": 0.4
 }

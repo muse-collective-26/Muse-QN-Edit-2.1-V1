@@ -17,6 +17,7 @@ const BOXED_WIDGET_NAMES = [
   "reference_resolution", "prompt", "negative_prompt", "cfg",
   "sampler_name", "scheduler", "steps", "seed", "control_after_generate",
   "cache_device", "cache_dtype", "mode", "enhance_resolution_multiply",
+  "dataset_views", "dataset_width", "dataset_height",
 ];
 const MAX_REFS = 10;
 const ENHANCE_DEFAULT_PROMPT = "Enhance this image to high resolution with rich fine details. "
@@ -329,7 +330,29 @@ class QwenImage21EditEditor {
     this.build();
   }
 
+  _normalizeDatasetWidgets() {
+    const w = this.realWidgets;
+    const views = w.dataset_views;
+    if (views && !["both", "portraits", "full_body"].includes(views.value)) views.value = "both";
+    for (const [name, fallback] of [["dataset_width",1152],["dataset_height",2048]]) {
+      const widget = w[name];
+      if (widget && (widget.value == null || widget.value === "" || !Number.isFinite(Number(widget.value)))) widget.value = fallback;
+    }
+  }
+
+  _syncPanelWidth() {
+    // DOM widget hosts may temporarily report their intrinsic/min-content width
+    // during queue validation. Use graph units, never zoomed screen bounds.
+    if (!this.container) return;
+    const width = Math.max(1530, (Number(this.node.size?.[0]) || 1550) - 20);
+    const value = `${width}px`;
+    if (this.container.style.width !== value) this.container.style.width = value;
+    this.container.style.minWidth = "1530px";
+  }
+
   async queue() {
+    this._normalizeDatasetWidgets();
+    this._syncPanelWidth();
     try {
       await app.queuePrompt(0, 1);
     } catch (error) {
@@ -366,6 +389,8 @@ class QwenImage21EditEditor {
   }
 
   build() {
+    this._normalizeDatasetWidgets();
+    this._syncPanelWidth();
     this.container.innerHTML = "";
 
     const header = document.createElement("div");
@@ -396,6 +421,8 @@ class QwenImage21EditEditor {
     rightCol.appendChild(this.referencesBox);
     this.enhanceBox = this._buildEnhanceBox();
     rightCol.appendChild(this.enhanceBox);
+    this.datasetBox = this._buildDatasetBox();
+    rightCol.appendChild(this.datasetBox);
 
     const outputCol = document.createElement("div");
     outputCol.className = "musequwen21-output-col";
@@ -454,6 +481,7 @@ class QwenImage21EditEditor {
     const isT2I = mode === "text_to_image";
     const isEnhance = mode === "enhance";
     const isEdit = mode === "edit";
+    const isDataset = mode === "refmod_dataset";
     if (this.modeHintEl) this.modeHintEl.textContent = isT2I
       ? "Generate a new image from text. Set its shape and size in Resolution; no reference image is used."
       : isEnhance
@@ -468,7 +496,10 @@ class QwenImage21EditEditor {
       : isEnhance ? "Describe the detail or clarity improvements you want..."
       : "Keep the character and pose in ref 1 unchanged, put the outfit from ref 2 on them...";
     if (this.referencesBox) this.referencesBox.style.display = isEdit ? "" : "none";
-    if (this.enhanceBox) this.enhanceBox.style.display = isEnhance ? "" : "none";
+    if (this.enhanceBox) {
+      this.enhanceBox.style.display = isEnhance || isDataset ? "" : "none";
+      this.enhanceBox.querySelector(".musequwen21-reference-title span").textContent = isDataset ? "Character reference · Ref 1" : "Image to Enhance";
+    }
     if (this.outputCol) this.outputCol.style.display = isEdit ? "" : "none";
     if (this.enhanceMultiplyRow) this.enhanceMultiplyRow.style.display = isEnhance ? "" : "none";
     if (this.rightCol) this.rightCol.classList.toggle("musequwen21-stretch-col", isEnhance);
@@ -482,8 +513,64 @@ class QwenImage21EditEditor {
         ? "Describe how to enhance the image below. Defaults to a general detail/clarity pass — edit freely."
         : "Write plain English — 'ref 1', 'reference 2' — it's converted to Qwen's own <image1>/<image2> tags automatically. Ref 1 is the edit target; the rest are references.";
     }
+    if (this.datasetBox) this.datasetBox.style.display = isDataset ? "" : "none";
+    if (isDataset) {
+      if (this.modeHintEl) this.modeHintEl.textContent = "Generate character views, review them, then enhance selected views into separate portrait images for a RefMod dataset.";
+      if (this.promptLabelEl) this.promptLabelEl.textContent = "Additional character instructions (optional)";
+      if (this.promptInput) this.promptInput.placeholder = "Optional details to preserve. The portrait and full-body view instructions are built in.";
+      if (this.promptHintEl) this.promptHintEl.textContent = "Uses Ref 1 only. Output is individual images; this does not create a RefMod bundle.";
+      if (this.refSettingsHint) this.refSettingsHint.textContent = "Reference conditioning detail for the character and each cropped view; separate from output dimensions.";
+    }
     this._syncResolutionControls();
     this._scheduleNodeResize();
+  }
+
+  _buildDatasetBox() {
+    const box = document.createElement("div");
+    box.className = "musequwen21-box musequwen21-box-mode";
+    const title = document.createElement("div");
+    title.className = "musequwen21-box-title"; title.textContent = "RefMod Dataset";
+    box.appendChild(title);
+    for (const [name,label] of [["dataset_views","Views"],["dataset_width","Each image width"],["dataset_height","Each image height"]]) {
+      const widget=this.realWidgets[name];
+      if (widget) box.appendChild(name === "dataset_views" ? this._selectRow(label,widget) : this._numberRow(label,widget,64));
+    }
+    const help=document.createElement("div"); help.className="musequwen21-reference-help";
+    help.textContent="Portrait images only, up to 4 MP each. Default: 1152 × 2048. Generate previews first; select views below and enhance them. Connected Save Image saves each final image separately. Additional downstream upscalers can change the final size.";
+    box.appendChild(help);
+    const generate=document.createElement("button"); generate.className="musequwen21-output-btn musequwen21-btn-confirm";
+    generate.textContent="Generate dataset views";
+    generate.onclick=()=>{this.datasetStatus.textContent="Generating dataset sheets…"; setState(this.stateWidget,{action:null}); this.queue();};
+    box.appendChild(generate);
+    this.datasetGallery=document.createElement("div");
+    this.datasetGallery.style.cssText="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px";
+    box.appendChild(this.datasetGallery);
+    this.datasetFinish=document.createElement("button"); this.datasetFinish.className="musequwen21-output-btn musequwen21-btn-confirm";
+    this.datasetFinish.textContent="Enhance selected views → Output"; this.datasetFinish.disabled=true;
+    this.datasetFinish.onclick=()=>{
+      const selected=Array.from(this.datasetGallery.querySelectorAll('input[type="checkbox"]')).filter(x=>x.checked).map(x=>Number(x.value));
+      if (!selected.length) return;
+      this.datasetStatus.textContent=`Enhancing ${selected.length} selected views…`;
+      setState(this.stateWidget,{action:{type:"dataset_finish",dataset_id:this.datasetId,selected}}); this.queue();
+    };
+    box.appendChild(this.datasetFinish);
+    this.datasetDirect=document.createElement("button");
+    this.datasetDirect.className="musequwen21-output-btn musequwen21-btn-apply";
+    this.datasetDirect.textContent="Send selected views to output without enhance";
+    this.datasetDirect.disabled=true;
+    this.datasetDirect.onclick=()=>{
+      const selected=Array.from(this.datasetGallery.querySelectorAll('input[type="checkbox"]')).filter(x=>x.checked).map(x=>Number(x.value));
+      if (!selected.length) return;
+      this.datasetStatus.textContent="Sending original generated views to output…";
+      setState(this.stateWidget,{action:{type:"dataset_output_originals",dataset_id:this.datasetId,selected}}); this.queue();
+    };
+    box.appendChild(this.datasetDirect);
+    const directHint=document.createElement("div"); directHint.className="musequwen21-reference-help";
+    directHint.textContent="Without enhance: keeps the original crop pixels and size (576 × 1024 with the default settings). Turn off connected DLSS5 to also skip downstream enhancement.";
+    box.appendChild(directHint);
+    this.datasetStatus=document.createElement("div"); this.datasetStatus.className="musequwen21-reference-help";
+    this.datasetStatus.textContent="Upload Ref 1, then Generate dataset views. Both sets use two sheet renders plus up to eight enhancement renders.";
+    box.appendChild(this.datasetStatus); return box;
   }
 
   _buildEnhanceBox() {
@@ -562,7 +649,7 @@ class QwenImage21EditEditor {
     const values = widget.options?.values || [];
     values.forEach((v) => {
       const opt = document.createElement("option");
-      opt.value = v; opt.textContent = v;
+      opt.value = v; opt.textContent = ({refmod_dataset:"RefMod Dataset", both:"Portraits + Full body", portraits:"Portraits", full_body:"Full body"})[v] || v;
       if (v === widget.value) opt.selected = true;
       select.appendChild(opt);
     });
@@ -636,6 +723,8 @@ class QwenImage21EditEditor {
     const mode = this.realWidgets.mode?.value || "edit";
     const isT2I = mode === "text_to_image";
     const isEnhance = mode === "enhance";
+    const isDataset = mode === "refmod_dataset";
+    this.resolutionBox.style.display = isDataset ? "none" : "";
     const factor = parseFloat(this.realWidgets.enhance_resolution_multiply?.value) || 1;
     const multiplied = isEnhance && factor > 1;
     const enabled = isT2I || (!multiplied && !!this.realWidgets.custom_size?.value);
@@ -1132,6 +1221,21 @@ class QwenImage21EditEditor {
 
   handleExecuted(message) {
     if (!message) return;
+    const dataset = message.mquwen21_dataset?.[0];
+    if (dataset && this.datasetGallery) {
+      this.datasetId=dataset.id; this.datasetGallery.replaceChildren();
+      dataset.images.forEach((image,index)=>{
+        const card=document.createElement("label");
+        const img=document.createElement("img"); img.style.cssText="width:100%;height:auto;display:block";
+        img.src=api.apiURL("/view?"+new URLSearchParams({...image,t:Date.now()})); card.appendChild(img);
+        const checkbox=document.createElement("input"); checkbox.type="checkbox"; checkbox.checked=true; checkbox.value=String(index); checkbox.disabled=dataset.complete;
+        card.appendChild(checkbox); const caption=document.createElement("span"); caption.textContent=dataset.labels[index]; card.appendChild(caption);
+        this.datasetGallery.appendChild(card);
+      });
+      this.datasetFinish.disabled=dataset.complete;
+      this.datasetDirect.disabled=dataset.complete;
+      this.datasetStatus.textContent=dataset.complete ? `${dataset.images.length} separate images sent to output at ${dataset.width} × ${dataset.height} each.` : "Choose the views to keep, then Enhance selected views. Restarting ComfyUI clears these temporary previews.";
+    }
     const recipe = message.mquwen21_recipe?.[0];
     if (recipe) {
       this.hasPreview = true;
@@ -1200,6 +1304,7 @@ class QwenImage21EditEditor {
     // grow-only against the node's CURRENT size so a manual drag-resize is respected.
     if (window.LiteGraph?.vueNodesMode) return;
     if (!this.timelineWidget || !this.node?.setSize || !this.container) return;
+    this._syncPanelWidth();
     const contentHeight = Math.max(this.container.offsetHeight || 0, this.container.scrollHeight || 0, 480);
     this._cachedContentHeight = contentHeight;
     const minWidth = this._cachedContentWidth || 1550;
@@ -1271,6 +1376,7 @@ app.registerExtension({
     const onDrawForeground = nodeType.prototype.onDrawForeground;
     nodeType.prototype.onDrawForeground = function () {
       const result = onDrawForeground?.apply(this, arguments);
+      this._museQwenEditor?._syncPanelWidth();
       this._museQwenEditor?._syncDlssControl();
       return result;
     };
@@ -1280,6 +1386,18 @@ app.registerExtension({
       const r = onExecuted ? onExecuted.apply(this, arguments) : undefined;
       this._museQwenEditor?.handleExecuted(message);
       return r;
+    };
+
+    const onSerialize = nodeType.prototype.onSerialize;
+    nodeType.prototype.onSerialize = function (data) {
+      this._museQwenEditor?._normalizeDatasetWidgets();
+      const result = onSerialize?.apply(this, arguments);
+      // LiteGraph may have copied widget values before calling this hook.
+      for (const name of ["dataset_views", "dataset_width", "dataset_height"]) {
+        const index = this.widgets?.findIndex(w => w.name === name);
+        if (index >= 0 && data?.widgets_values) data.widgets_values[index] = this.widgets[index].value;
+      }
+      return result;
     };
 
     const onRemoved = nodeType.prototype.onRemoved;
@@ -1298,6 +1416,8 @@ app.registerExtension({
       const r = onConfigure ? onConfigure.apply(this, arguments) : undefined;
       const editor = this._museQwenEditor;
       if (editor) {
+        editor._normalizeDatasetWidgets();
+        editor._syncPanelWidth();
         editor._lastMode = editor.realWidgets.mode?.value || "edit";
         const raw = editor.refsDataWidget?.value || "{}";
         if (raw !== editor._lastConfiguredRaw) {
